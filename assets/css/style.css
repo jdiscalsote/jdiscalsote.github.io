@@ -167,13 +167,6 @@ button:active {
 }
 .services-text p:nth-child(2){
 	font-family: calibri;
-	font-weight: bold;
-	color: #3e3e3d;
-	font-size: 15px;
-	line-height: 5px;
-}
-.services-text p:nth-child(3){
-	font-family: calibri;
 	color: #7e7d7d;
 }
 .services-text {
@@ -352,8 +345,8 @@ textarea::placeholder {
 		margin-bottom: 20px;
 	}
 }
-@media(max-width: 750px){
-	section{
+@media(max-width: 750px){	
+  section{
 		background-image: none;
 		background-color: #f7f7f7;
 	}
