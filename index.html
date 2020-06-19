@@ -47,7 +47,30 @@
 			<button ><a href="file/JohnNicoleCV2020.pdf" target="null">Download CV</a></button>
 		</div>
 	</div>
-
+  <!-- Skills -->
+  <div class="skills">
+    <div class="skill-text">
+      <div class="skill-name">HTML</div>
+      <div class="skill-bar">
+        <div class="skill-per" per="90"></div>
+      </div>
+    </div>
+    
+    <div class="skill-text">
+      <div class="skill-name">CSS</div>
+      <div class="skill-bar">
+        <div class="skill-per" per="70"></div>
+      </div>
+    </div>
+    
+    <div class="skill-text">
+      <div class="skill-name">JAVASCRIPT</div>
+      <div class="skill-bar">
+        <div class="skill-per" per="60"></div>
+      </div>
+    </div>
+  </div>
+  
 	<!-- Service -->
 	<div class="services">
 		<div class="services-text">
@@ -97,10 +120,32 @@
 		<p>&copy; 2020 Developer | All rights Reserved | This site is under Development</p>
 		<p>Email: <a href="#">njdiscalsote@gmail.com</a></p>
 	</div>
+	
+	<!-- Skill Bar Animation -->
+  <script type="text/javascript">
+    $('.skill-per').each(function () {
+      var this = $(this);
+      var per = $this.attr('per');
+      $this.css("width", per +'%');
+      $({animatedValue: 0}).animate({animatedValue: per
+        
+      }, {duration: 1000,
+      step: function () {
+        $this.attr('per', Math.floor(this.animatedValue) + '%');
+      },
+      complete: function () {
+        $this.attr('per', Math.floor(this.animatedValue) + '%');
+      }
+    });
+  });
+  </script>
 
 	<!-- If you want to disabled right click use this code -->
 	<script type="text/javascript">
 		document.addEventListener('contextmenu', event => event.preventDefault());
 	</script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
 </body>
 </html>

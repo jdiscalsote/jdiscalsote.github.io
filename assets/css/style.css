@@ -153,6 +153,51 @@ button:active {
 .about-text button a {
 	color: #FFFFFF;
 }
+.skills {
+  margin: 0 20px 20px;
+}
+.skill-name {
+  font-size: 18px;
+  font-weight: 700px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.skill-bar {
+  height: 20px;
+  background-color: #cacaca;
+  border-radius: 8px;
+}
+.skill-per {
+  height: 20px;
+  background-color: #0fbcf9;
+  border-radius: 8px;
+  width: 0;
+  transition: 1s linear;
+  position: relative;
+}
+.skill-per::before {
+  content: attr(per);
+  position: absolute;
+  padding: 4px 6px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 4px;
+  top: -35px;
+  right: 0;
+  transform: translateX(50%);
+}
+.skill-per::after {
+  content: '';
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background-color: #000;
+  top: -20px;
+  right: 0;
+  transform: translateX(50%) rotate(45deg);
+  border-radius: 2px;
+}
 .services {
 	height: 600px;
 	padding: 2% 10% 0px 10%;
