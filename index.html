@@ -50,24 +50,46 @@
 	</div>
   <!-- Skills -->
   <div class="skills">
+    <h1>Skills</h1>
     <div class="skill-text">
-      <div class="skill-name">HTML</div>
+      <div class="skill-name">HTML5</div>
       <div class="skill-bar">
-        <div class="skill-per" per="90"></div>
+        <div class="skill-per" per="95"></div>
       </div>
     </div>
     
     <div class="skill-text">
-      <div class="skill-name">CSS</div>
+      <div class="skill-name">CSS3</div>
       <div class="skill-bar">
-        <div class="skill-per" per="70"></div>
+        <div class="skill-per" per="95"></div>
       </div>
     </div>
     
     <div class="skill-text">
       <div class="skill-name">JAVASCRIPT</div>
       <div class="skill-bar">
-        <div class="skill-per" per="60"></div>
+        <div class="skill-per" per="15"></div>
+      </div>
+    </div>
+    
+    <div class="skill-text">
+      <div class="skill-name">Bootstrap V4</div>
+      <div class="skill-bar">
+        <div class="skill-per" per="90"></div>
+      </div>
+    </div>
+    
+    <div class="skill-text">
+      <div class="skill-name">PHP</div>
+      <div class="skill-bar">
+        <div class="skill-per" per="50"></div>
+      </div>
+    </div>
+    
+    <div class="skill-text">
+      <div class="skill-name">PHOTOSHOP CS6</div>
+      <div class="skill-bar">
+        <div class="skill-per" per="50"></div>
       </div>
     </div>
   </div>
@@ -123,12 +145,21 @@
 	</div>
 	
 	<!-- Skill Bar Animation -->
-  <script type="text/javascript">
+  <script>
     $('.skill-per').each(function() {
-      var this = $(this);
+      var $this = $(this);
       var per = $this.attr('per');
       $this.css("width",per+'%');
-      
+      $({animatedValue: 0}).animate({animatedValue: per
+      }, {
+        duration: 1000,
+      step: function() {
+        $this.attr('per', Math.floor(this.animatedValue) + '%');
+      },
+      complete: function() {
+        $this.attr('per', Math.floor(this.animatedValue) + '%');
+      }
+      });
   });
   </script>
 
