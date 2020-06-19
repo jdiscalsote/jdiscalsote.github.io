@@ -6,6 +6,7 @@
 	<meta name="viewport" author="John Nicole Discalsote" content="width=device-width, initial-scale=1.0">
 	<title>Personal Website | John</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
 </head>
 <body>
@@ -123,17 +124,17 @@
 	
 	<!-- Skill Bar Animation -->
   <script type="text/javascript">
-    $('.skill-per').each(function () {
+    $('.skill-per').each(function() {
       var this = $(this);
       var per = $this.attr('per');
       $this.css("width", per +'%');
       $({animatedValue: 0}).animate({animatedValue: per
-        
-      }, {duration: 1000,
-      step: function () {
+      },
+      {duration: 1000,
+      step: function() {
         $this.attr('per', Math.floor(this.animatedValue) + '%');
       },
-      complete: function () {
+      complete: function() {
         $this.attr('per', Math.floor(this.animatedValue) + '%');
       }
     });
@@ -144,8 +145,6 @@
 	<script type="text/javascript">
 		document.addEventListener('contextmenu', event => event.preventDefault());
 	</script>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 </body>
 </html>
