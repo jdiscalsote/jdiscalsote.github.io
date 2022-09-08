@@ -397,10 +397,10 @@ footer {
   animation: fade-up 1s; 
 }
 .fade-up1 {
-  animation: fade-up 1.6s; 
+  animation: fade-up 1.5s; 
 }
 .fade-in {
-  animation: fade-in 1.2s;
+  animation: fade-in 1s;
 }
 .slide-left {
   animation: slide-left 1s; }
