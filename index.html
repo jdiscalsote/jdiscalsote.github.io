@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 	<head>
 		<meta charset="utf-8" />
     	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,10 +10,12 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/anim.css">
 		<link rel="stylesheet" type="text/css" href="css/added.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">		
-		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">	
+		<!-- <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 		<style type="text/css">
 	        .mainDev {
@@ -40,7 +42,7 @@
 	        .profImg {
 	        	border-radius: 50%;
 	        }
-	        .nameH6 {
+	        .nameH4 {
 	        	white-space: nowrap;
 	        	font-weight: 700;
 	        }
@@ -77,7 +79,7 @@
 									</div>
 									<div class="mb-25">
 										<h5 class="fade-up rw-sentence">
-											<span>Aspiring</span> 
+											<span>Aspiring</span>
 											<div class="rw-words rw-words-1">
 												<span>Programmer</span>
 												<span>Web Developer</span>
@@ -86,9 +88,9 @@
 										</h5>
 									</div>
 									<div class="fade-up">
-										<button class="primary-btn mr-15 mb-2">Hire Me</button>
+										<button class="primary-btn mr-15 mb-2">Hire Me <i class="fas fa-bath"></i></button>
 										<button class="secondary-btn">
-											<a class="down-cv" href="file/JohnCV_2022.pdf" target="null">Download CV</a>
+											<a class="down-cv" href="file/JohnCV_2022.pdf" target="null">Download CV <i class="fas fa-map"></i></a>
 										</button>
 									</div>
 	                    		</div>
@@ -98,12 +100,12 @@
   										<div id="About" class="container tab-pane active">
   											<div class="container-fluid text-center mb-2 fade-in">
   												<img src="images/img/prof.png" class="shadow mb-2 profImg" width="100">
-  												<h4 class="nameH6">John Nicole Discalsote</h6>
-  												<label class="text-muted small">Programmer</label> <br>
+  												<h4 class="nameH4">John Nicole Discalsote</h4>
+  												<label class="text-muted small">Programmer</label> <br/>
   												<label class="text-muted small">Full Stack Developer</label>
-  												<i class="fa fa-map"></i>
   											</div>
   											<div class="container-fluid fade-up1">
+  												<i class="fa fa-bath" aria-hidden="true"></i>
   												<h6>About</h6>
   												<p class="small">Self tought Programmer & Developer and also Designer. I just started interest on web development and software development during my college. I am a hardworking person and willing to learn new technologies.</p>
   											</div>
@@ -118,7 +120,7 @@
   											<div class="container-fluid fade-up1">
   												<h6>Contact</h6>
   												<div class="row">
-  													<div class="col-md-2"><i class="fa fa-map-marker"></i></div>
+  													<div class="col-md-2"><i class="fas fa-map-marker"></i></div>
   													<div class="col-md"></div>
   												</div>
   											</div>
@@ -142,9 +144,44 @@
 	        </div>
 	    </div>
 
-	<script type="text/javascript">
-		document.addEventListener('contextmenu', event => event.preventDefault());
-	</script>
-	
+		<!-- Messenger Chat Plugin Code -->
+	    <div id="fb-root"></div>
+
+	    <!-- Your Chat Plugin code -->
+	    <div id="fb-customer-chat" class="fb-customerchat">
+	    </div>
+
+	    <script>
+	      var chatbox = document.getElementById('fb-customer-chat');
+	      chatbox.setAttribute("page_id", "1502260496762087");
+	      chatbox.setAttribute("attribution", "biz_inbox");
+	    </script>
+
+	    <!-- Your SDK code -->
+	    <script>
+	      window.fbAsyncInit = function() {
+			FB.init({
+		  		xfbml	: true,
+		  		version	: 'v13.0'
+			});
+	      };
+
+	      (function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		      }(document, 'script', 'facebook-jssdk'));
+	    </script>
+
+		<script src="js/anim.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+
+		<script type="text/javascript">
+			document.addEventListener('contextmenu', event => event.preventDefault());
+		</script>
+
 	</body>
 </html>	
