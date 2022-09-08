@@ -13,21 +13,21 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+		<script src="js/bootstrap.bundle.min.js"></script>
+
 		<style type="text/css">
 	        html, body {
 	            margin: 0 auto;
 	            padding: 0;
 	            height: 100%;
 	        }
-
 	        .mainDev {
 	            display: table;
 	            height: 100%;
 	            margin: 0 auto;
 	            padding: 0px;
-	            width: 60%;
+	            width: 80%;
 	        }
-
 	        .container-login {
 	            color: #ffffff;
 	            display: table-cell;
@@ -35,6 +35,13 @@
 	        }
 	        .secondary-btn a {
 	        	text-decoration: none;
+	        }
+	        .navpillsBottom {
+	        	position: absolute;
+	        	bottom: 10px;
+	        }
+	        .profImg {
+	        	border-radius: 50%;
 	        }
 		</style>
 	</head>
@@ -45,30 +52,62 @@
 	        <div class="container-login">
 	            <div class="card shadow">
 	                <div class="card-body">
-	                    <div class="container p-5">
-							<div class="normal-grid__column mb-25">
-								<h1 class="fade-up">Hello</h1>
-									<div class="line-helper fade-up"></div>
-							</div>
-							<div class="mb-25">
-								<h1 class="fade-up" style="font-size: 60px; color: 000"><span>I am</span> John Nicole Discalsote</h1>
-							</div>
-							<div class="mb-25">
-								<h5 class="fade-up rw-sentence">
-									<span>Aspiring</span> 
-									<div class="rw-words rw-words-1">
-										<span>Programmer</span>
-										<span>Web Developer</span>
-										<span>Fullstack Developer</span>
+	                    <div class="container p-3">
+	                    	<div class="row">
+	                    		<div class="col-md-8">
+									<div class="normal-grid__column mb-25">
+										<h1 class="fade-up">Hello</h1>
+											<div class="line-helper fade-up"></div>
 									</div>
-								</h5>
-							</div>
-							<div class="fade-up">
-								<button class="primary-btn mr-15">Contcat Me</button>
-								<button class="secondary-btn">
-									<a class="down-cv" href="file/JohnCV_2022.pdf" target="null">Download CV</a>
-								</button>
-							</div>
+									<div class="mb-25">
+										<h1 class="fade-up" style="font-size: 60px; color: 000"><span>I am</span> John Nicole Discalsote</h1>
+									</div>
+									<div class="mb-25">
+										<h5 class="fade-up rw-sentence">
+											<span>Aspiring</span> 
+											<div class="rw-words rw-words-1">
+												<span>Programmer</span>
+												<span>Web Developer</span>
+												<span>Fullstack Developer</span>
+											</div>
+										</h5>
+									</div>
+									<div class="fade-up">
+										<button class="primary-btn mr-15 mb-2">Contcat Me</button>
+										<button class="secondary-btn">
+											<a class="down-cv" href="file/JohnCV_2022.pdf" target="null">Download CV</a>
+										</button>
+									</div>
+	                    		</div>
+	                    		<div class="col-md-4">
+	                    			<!-- Tab panes -->
+  									<div class="tab-content">
+  										<div id="Home" class="container tab-pane active">
+  											<div class="container-fluid text-center">
+  												<img src="images/img/prof.png" class="shadow mb-2 profImg" width="100">
+  												<h6>John Nicole Discalsote</h6>
+  												<label class="text-muted small">Programmer</label>
+  												<label class="text-muted small">Fullstack Developer</label>
+  											</div>
+  										</div>
+  										<div id="About" class="container tab-pane"></div>
+  										<div id="Contact" class="container tab-pane"></div>
+  									</div>
+
+	                    			<!-- Nav pills -->
+							    	<ul class="nav nav-pills navpillsBottom" role="tablist">
+								  		<li class="nav-item">
+								    		<a class="nav-link active" data-bs-toggle="pill" href="#Home">Home</a>
+								    	</li>
+								    	<li class="nav-item">
+								    		<a class="nav-link" data-bs-toggle="pill" href="#About">About</a>
+								    	</li>
+								    	<li class="nav-item">
+								    		<a class="nav-link" data-bs-toggle="pill" href="#Contact">Contact</a>
+								    	</li>
+								  	</ul>
+	                    		</div>
+	                    	</div>	
 	                    </div>
 	                </div>
 	            </div>
