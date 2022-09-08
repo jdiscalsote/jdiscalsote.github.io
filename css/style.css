@@ -1,0 +1,99 @@
+﻿body * {
+    font-family: Arial;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+    body::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: rgba(0,0,0,0.4);
+        border-radius: 10rem;
+        border: 1px solid #fff;
+    }
+
+    body::-webkit-scrollbar-track-piece:start {
+        background-color: transparent;
+    }
+
+    body::-webkit-scrollbar-track-piece:end {
+        background-color: transparent;
+    }
+.sysTitle {
+    font-family: ArsenicaTrial-Regular;
+}
+.pageTitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 3px;
+}
+.backButton {
+    color: #000;
+    font-size: 12px;
+}
+.addButton {
+    float: right;
+    font-size: 14px;
+}
+.addButton:focus {
+    outline: none;
+    box-shadow: none;
+}
+.btnMenu:focus, .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+} 
+.gridHeader {
+    font-size: 14px;
+}
+.gridRows {
+    font-size: 12px;
+}
+
+.userProfieIMG {
+    border-radius: 50%;
+    border: 1px solid #d9d9d9;
+    padding: 10px;
+    width: 200px;
+    margin: 10%;
+}
+
+.form-control, .form-control-plaintext {
+    font-size: 14px;
+}
+.formConLabel {
+    color: #3c3c3c;
+    font-size: 16px;
+}
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+.modal-title {
+    font-size: 18px;
+    color: rgba(100,100,100,0.9);
+}
+
+.alert {
+    font-size: 12px;
+    padding: 10px;
+    position: fixed;
+    top: 75px;
+    z-index: 999;
+    opacity: 0.8;
+    right: 20px;
+}
+
+@font-face {
+    font-family: 'Walkind';
+    src: url('../fonts/Walkind.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'ArsenicaTrial-Regular';
+    src: url('../fonts/ArsenicaTrial-Regular.ttf') format('truetype');
+}
