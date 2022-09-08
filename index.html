@@ -5,22 +5,17 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-		<title>JOHN | Personal Portfolio</title>
+		<title>John Nicole Discalsote | Profile</title>
 
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/anim.css">
 		<link rel="stylesheet" type="text/css" href="css/added.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">		
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/font-awesome.min.css">
 
 		<script src="js/bootstrap.bundle.min.js"></script>
 
 		<style type="text/css">
-	        html, body {
-	            margin: 0 auto;
-	            padding: 0;
-	            height: 100%;
-	        }
 	        .mainDev {
 	            display: table;
 	            height: 100%;
@@ -37,11 +32,29 @@
 	        	text-decoration: none;
 	        }
 	        .navpillsBottom {
+	        	text-align: center;
+	        	align-items: center;
 	        	position: absolute;
 	        	bottom: 10px;
 	        }
 	        .profImg {
 	        	border-radius: 50%;
+	        }
+	        .nameH6 {
+	        	white-space: nowrap;
+	        	font-weight: 700;
+	        }
+	        .nav-item a {
+	        	width: 100px;
+	        	padding: 10px;
+	        	margin:  10px;
+	        	white-space: nowrap;
+	        }
+	        .nav-item .active {	        	
+	        	outline: none;
+	        	box-shadow: none;
+	        	border-radius: 0;
+	        	border-bottom: 2px solid #9e9aa4;
 	        }
 		</style>
 	</head>
@@ -51,10 +64,10 @@
 	    <div class="mainDev">
 	        <div class="container-login">
 	            <div class="card shadow">
-	                <div class="card-body">
-	                    <div class="container p-3">
+	                <div class="card-body p-3">
+	                    <div class="container p-5">
 	                    	<div class="row">
-	                    		<div class="col-md-8">
+	                    		<div class="col-md-7 mb-3">
 									<div class="normal-grid__column mb-25">
 										<h1 class="fade-up">Hello</h1>
 											<div class="line-helper fade-up"></div>
@@ -68,42 +81,57 @@
 											<div class="rw-words rw-words-1">
 												<span>Programmer</span>
 												<span>Web Developer</span>
-												<span>Fullstack Developer</span>
+												<span>Full Stack Developer</span>
 											</div>
 										</h5>
 									</div>
 									<div class="fade-up">
-										<button class="primary-btn mr-15 mb-2">Contcat Me</button>
+										<button class="primary-btn mr-15 mb-2">Hire Me</button>
 										<button class="secondary-btn">
 											<a class="down-cv" href="file/JohnCV_2022.pdf" target="null">Download CV</a>
 										</button>
 									</div>
 	                    		</div>
-	                    		<div class="col-md-4">
+	                    		<div class="col-md-5">
 	                    			<!-- Tab panes -->
   									<div class="tab-content">
-  										<div id="Home" class="container tab-pane active">
-  											<div class="container-fluid text-center">
+  										<div id="About" class="container tab-pane active">
+  											<div class="container-fluid text-center mb-2 fade-in">
   												<img src="images/img/prof.png" class="shadow mb-2 profImg" width="100">
-  												<h6>John Nicole Discalsote</h6>
-  												<label class="text-muted small">Programmer</label>
-  												<label class="text-muted small">Fullstack Developer</label>
+  												<h4 class="nameH6">John Nicole Discalsote</h6>
+  												<label class="text-muted small">Programmer</label> <br>
+  												<label class="text-muted small">Full Stack Developer</label>
+  												<i class="fa fa-map"></i>
+  											</div>
+  											<div class="container-fluid fade-up1">
+  												<h6>About</h6>
+  												<p class="small">Self tought Programmer & Developer and also Designer. I just started interest on web development and software development during my college. I am a hardworking person and willing to learn new technologies.</p>
   											</div>
   										</div>
-  										<div id="About" class="container tab-pane"></div>
-  										<div id="Contact" class="container tab-pane"></div>
+  										<div id="Contact" class="container tab-pane">
+  											<div class="container-fluid text-center mb-3 fade-in">
+  												<img src="images/img/prof.png" class="shadow mb-2 profImg" width="60">
+  												<h6 class="nameH6">John Nicole Discalsote</h6>
+  												<label class="text-muted small">Programmer</label> <br>
+  												<label class="text-muted small">Full Stack Developer</label>
+  											</div>
+  											<div class="container-fluid fade-up1">
+  												<h6>Contact</h6>
+  												<div class="row">
+  													<div class="col-md-2"><i class="fa fa-map-marker"></i></div>
+  													<div class="col-md"></div>
+  												</div>
+  											</div>
+  										</div>
   									</div>
 
 	                    			<!-- Nav pills -->
-							    	<ul class="nav nav-pills navpillsBottom" role="tablist">
-								  		<li class="nav-item">
-								    		<a class="nav-link active" data-bs-toggle="pill" href="#Home">Home</a>
+							    	<ul class="nav nav-pills navpillsBottom text-center" role="tablist">
+								    	<li class="nav-item">
+								    		<a class="btn active" data-bs-toggle="pill" href="#About">About</a>
 								    	</li>
 								    	<li class="nav-item">
-								    		<a class="nav-link" data-bs-toggle="pill" href="#About">About</a>
-								    	</li>
-								    	<li class="nav-item">
-								    		<a class="nav-link" data-bs-toggle="pill" href="#Contact">Contact</a>
+								    		<a class="btn" data-bs-toggle="pill" href="#Contact">Contact</a>
 								    	</li>
 								  	</ul>
 	                    		</div>
@@ -114,5 +142,9 @@
 	        </div>
 	    </div>
 
+	<script type="text/javascript">
+		document.addEventListener('contextmenu', event => event.preventDefault());
+	</script>
+	
 	</body>
 </html>	
