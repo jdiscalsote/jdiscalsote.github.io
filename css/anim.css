@@ -7,11 +7,11 @@
 }
 .rw-sentence{
 	margin: 0px;
-	text-align: left;
+	text-align: left;	
 	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
 }
 .rw-sentence span{
-	color: #444;
+	color: #ffffff;
 	font-size: 25px;
 	font-weight: normal;
 }
@@ -26,7 +26,7 @@
 	margin-top: 6px;
 	font-size: 18px;
 	overflow: hidden;
-	color: #6b969d;
+	color: #ffffff;
 	-webkit-animation: rotateWord 3s linear infinite 0s;
 	-ms-animation: rotateWord 3s linear infinite 0s;
 	animation: rotateWord 3s linear infinite 0s;
@@ -35,13 +35,13 @@
     -webkit-animation-delay: 1s; 
 	-ms-animation-delay: 1s; 
 	animation-delay: 1s; 
-	color: #6b889d;
+	color: #ffffff;
 }
 .rw-words-1 span:nth-child(3) { 
     -webkit-animation-delay: 2s; 
 	-ms-animation-delay: 2s; 
 	animation-delay: 2s; 
-	color: #6b739d;	
+	color: #ffffff;	
 }
 @-webkit-keyframes rotateWord {
     0% { opacity: 0; }
