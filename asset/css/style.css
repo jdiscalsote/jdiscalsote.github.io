@@ -68,6 +68,7 @@ body {
     border: 6px solid #000;
     border-radius: 100%;
     padding: 10px;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2), -5px -5px 25px rgba(0, 0, 0, 0.2);
 }
 
 .imgProfile {
@@ -93,6 +94,9 @@ body {
     padding: 10px; /* Padding inside the border */
     margin: 0 10px 0 0; /* Adjust spacing between icons */
 }
+.secIcon:hover {
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2), -5px -5px 25px rgba(0, 0, 0, 0.2);
+}
 .secIcon i {
     margin-left: 6px;
     font-size: 16px;
@@ -107,8 +111,10 @@ body {
     padding: 10px;
     font-size: 22px;
 }
+.btnDonwload:hover {
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2), -5px -5px 25px rgba(0, 0, 0, 0.2);
+}
 .btnDonwload a {
     color: #000;
     text-decoration: none;
 }
-
