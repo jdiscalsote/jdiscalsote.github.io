@@ -8,49 +8,33 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: -10px 0px;
+    padding: 0 0;
+}
+
+.navbar-nav li {
+    margin: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1.5px solid #333;
+}
+.navbar-nav li a {
     color: #333;
-    padding: 0 20px;
-}  
-.nav-items ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-} 
-.nav-items li {
-    margin-right: 30px;
-}  
-.nav-items a {
-    color: #333;
+    font-size: 16px;
+    letter-spacing: 2px;
     text-decoration: none;
-}  
-.menu-icon {
-    display: none;
-    cursor: pointer;
+}
+.navbar-nav li i {
     font-size: 20px;
+    margin-right: 22px;
+} 
+.navbar-nav li:hover {
+    background-color: #333;
+}
+.navbar-nav li a:hover {
+    color: #fff;
 }
   
-  /* Media query for responsive design */
-  @media screen and (max-width: 768px) {
-    .nav-items {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      z-index: 1;
-    }
-  
-    .nav-items ul {
-      padding: 10px;
-    }
-  
-    .menu-icon {
-      display: block;
-    }
-  }  
-
 .divOutside {
     display: flex;
     flex-wrap: wrap;
@@ -65,7 +49,7 @@ body {
 }
 .divCircle {
     width: 280px;
-    border: 6px solid #000;
+    border: 6px solid #333;
     border-radius: 100%;
     padding: 10px;
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2), -5px -5px 25px rgba(0, 0, 0, 0.2);
