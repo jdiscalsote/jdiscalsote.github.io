@@ -42,25 +42,26 @@
         }
 
         .offcanvasMobile { /*Moblie View*/
-            width: 60% !important;
+            width: 80% !important;
             transition: 0.5s;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="asset/img/endgame.png" width="160" />
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm navbar-expand-md navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <img src="asset/img/endgame.png" width="200" />
+            <button class="btn btnMenu" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvasMenu" onclick="toggleMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </button>
         </div>
-        <button class="btn btnMenu" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvasMenu" onclick="toggleMenu(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </button>
     </nav>
 
-    <div class="divOutside">
-        <div class="divProfile">
+    <div class="row pageContent">
+        <div class="col-sm col-md col-lg mb-5" style="margin: 10px; padding: 30px;">
             <h5>Hello, I'm John Nicole</h5>
             <h1>Full Stack Developer</h1>
 
@@ -71,40 +72,48 @@
                 I am a hardworking person and willing to learn new technologies.
             </p>
 
-            <div class="divIcon">
-                <div class="secIcon">
-                    <a href="https://github.com/jdiscalsote" target="_blank">
-                        <i class="fa fa-github"></i>
-                    </a>
+            <br>
+
+            <div class="row">
+                <div class="col-sm col-md col-lg mb-3">
+                    <div class="divIcon">
+                        <div class="secIcon">
+                            <a href="https://github.com/jdiscalsote" target="_blank">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="secIconFB">
+                            <i class="fa fa-facebook"></i>
+                        </div>
+                        <div class="secIcon">
+                            <a href="https://www.linkedin.com/in/jdiscalsote/" target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="secIcon">
+                            <i class="fa fa-google"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="secIcon">
-                    <i class="fa fa-facebook"></i>
-                </div>
-                <div class="secIcon">
-                    <a href="https://www.linkedin.com/in/jdiscalsote/" target="_blank">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                </div>
-                <div class="secIcon">
-                    <i class="fa fa-google"></i>
+                <div class="col-sm col-md col-lg">
+                    <button class="btnDonwload">
+                        <a href="asset/file/JohnCV_2024.pdf" target="_blank">Download</a>
+                    </button>
                 </div>
             </div>
-
-            <br>
-            <button class="btnDonwload">
-                <a href="asset/file/JohnCV_2024.pdf" target="null">Download</a>
-            </button>
         </div>
-        <div class="divSection">
-            <div class="divCircle">
-                <img src="asset/img/2x2.png" class="img-responsive imgProfile" />
+        <div class="col-sm col-md col-lg mb-5">
+            <div class="divSection">
+                <div class="divCircle">
+                    <img src="asset/img/2x2.png" class="img-responsive imgProfile" />
+                </div>
             </div>
         </div>
     </div>
 
     <div class="offcanvas offcanvas-start offcanvasSide" id="canvasMenu" data-bs-keyboard="false" data-bs-backdrop="false" tabindex="-1">
         <div class="offcanvas-header">
-            <h3 class="offcanvas-title">Menu</h3>
+            <h3 class="offcanvas-title p-2">Menu</h3>
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav">
