@@ -1,1 +1,0 @@
-## jdiscalsote.github.io
