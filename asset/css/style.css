@@ -64,30 +64,16 @@ html, body {
 .secIcon {
     width: 60px;
     height: 60px;
-    border: 2px solid black; /* Border around each icon */
+    border: 2px solid #606060; /* Border around each icon */
     border-radius: 100%;
-    padding: 8px 5px; /* Padding inside the border */
+    padding: 10px 15px; 
     margin: 0 10px 0 0; /* Adjust spacing between icons */
-}
-.secIconFB {
-    width: 60px;
-    height: 60px;
-    border: 2px solid black; /* Border around each icon */
-    border-radius: 100%;
-    padding: 12px 5px; /* Padding inside the border */
-    margin: 0 10px 0 0; /* Adjust spacing between icons */
-}
-.secIcon:hover,
-.secIconFB:hover {
-    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2), -5px -5px 25px rgba(0, 0, 0, 0.2);
 }
 .secIcon i {
-    margin-left: 5px;
-    font-size: 6vh;
+    font-size: 30px;
 }
-.secIconFB i {
-    margin-left: 12px;
-    font-size: 5vh;
+.secIcon:hover {
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2), -5px -5px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Container Button style*/
