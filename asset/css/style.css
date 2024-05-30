@@ -132,11 +132,57 @@ html, body {
     border-radius: 100%;
 }
 
-/* Skills style */
-.divSkills {
+/* Section Style */
+.divServices, .divSkills {
     margin-top: 100px;
     overflow: hidden; /* Prevents content overflow */
 }
+.divServices h2, .divSkills h2 {
+    font-family: 'Roboto', sans-serif;
+}
+.divServices h3, .divSkills h3 {
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343a40;
+}
+.hr-style {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), #000, rgba(0, 0, 0, 0));
+    margin: 20px 0;
+    position: relative;
+}
+.hr-style:before {
+    content: "";
+    display: block;
+    height: 2px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+}
+
+/* Services style */
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.card-body {
+    padding: 0;
+}
+.card img {
+    border-radius: 5px;
+}
+
+
+/* Skills style */
 .skill-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
