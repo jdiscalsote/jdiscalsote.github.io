@@ -43,30 +43,40 @@
             outline: none;
             box-shadow: none;
         }
-        .offcanvasSide { /*Desktop View*/
-            width: 20% !important;
-            transition: 0.5s;
-        }
-        .offcanvasMobile { /*Moblie View*/
-            width: 80% !important;
-            transition: 0.5s;
-        }
     </style>
+
 </head>
-<body>
+<body class="no-select">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm navbar-expand-md navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
             <img src="~/../asset/img/endgame.png" width="200" />
-            <button class="btn btnMenu" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvasMenu" onclick="toggleMenu(this)">
+            <button class="btn btnMenu navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainBar" onclick="toggleMenu(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </button>
+
+            <div class="collapse navbar-collapse" id="mainBar">
+                <ul class="navbar-nav">
+                    <li>
+                        <a href="index.html"><i class="fa fa-home"></i>HOME</a>
+                    </li>
+                    <li>
+                        <a href="#services"><i class="fa fa-laptop"></i>SERVICES</a>
+                    </li>
+                    <li>
+                        <a href="#skills"><i class="fa fa-cogs"></i>SKILLS</a>
+                    </li>
+                    <li>
+                        <a href="#contact"><i class="fa fa-address-card"></i>CONTACT</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="row pageContent">
+    <main class="row pageContent">
         <div class="col-sm col-md col-lg mb-5" style="margin: 10px; padding: 30px;">
             <h5 class="animate__animated animate__lightSpeedInLeft">Hello, I'm John Nicole</h5>
             <h1 class="animate__animated animate__lightSpeedInLeft">Full Stack Developer</h1>
@@ -117,32 +127,10 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="offcanvas offcanvas-start offcanvasSide shadow"  id="canvasMenu" data-bs-keyboard="false" data-bs-backdrop="false" tabindex="-1">
-        <div class="offcanvas-header">
-            <h3 class="offcanvas-title p-2">Menu</h3>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="navbar-nav">
-                <li>
-                    <a href="index.html"><i class="fa fa-home"></i>HOME</a>
-                </li>
-                <li>
-                    <a href="#services"><i class="fa fa-laptop"></i>SERVICES</a>
-                </li>
-                <li>
-                    <a href="#skills"><i class="fa fa-cogs"></i>SKILLS</a>
-                </li>
-                <li>
-                    <a href="#contact"><i class="fa fa-address-card"></i>CONTACT</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    </main>
 
     <!-- Services Section-->
-    <div class="container" id="services">
+    <content class="container" id="services">
         <div class="divServices">
             <hr class="hr-style" />
                 <h2 class="text-center">Services</h2>
@@ -154,14 +142,14 @@
 
             <div class="container row">
                 <div class="col-md-6">
-                    <div class="card">
+                    <div class="card shadow">
                         <div class="card-body">
                             <img src="~/../asset/img/Business Cards/front - 1.png" alt="Business Card Front" class="img-fluid" />
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card">
+                    <div class="card shadow">
                         <div class="card-body">
                             <img src="~/../asset/img/Business Cards/back - 1.png" alt="Business Card Back" class="img-fluid" />
                         </div>
@@ -169,10 +157,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </content>
 
     <!-- Skill Section-->
-    <div class="container" id="skills">
+    <content class="container" id="skills">
         <div class="divSkills">
             <hr class="hr-style" />
                 <h2 class="text-center">Areas of Expertise</h2>
@@ -182,7 +170,7 @@
 
             <h3>Web Development</h3>
 
-            <div class="skill-container">
+            <div class="container skill-container">
                 <div class="skill">
                     <div class="skill-circle">HTML5</div>
                     <div class="progress">
@@ -307,6 +295,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </content>
+
+    <content class="container" id="contact">
+        <div class="divContact">
+            <hr class="hr-style" />
+                <h2 class="text-center">Contact Me</h2>
+            <hr class="hr-style" />
+
+            <br/>
+        </div>
+    </content>
 </body>
 </html>

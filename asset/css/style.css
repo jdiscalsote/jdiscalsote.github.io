@@ -2,6 +2,14 @@ html, body {
     margin: 10px;
     padding: 10px;
     font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.no-select {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 /* Navbar styles */
@@ -14,12 +22,14 @@ html, body {
     transition: all 0.6s ease;
 }
 
-/* Side Navigation */
+/* Top Navigation */
 .navbar-nav {
     list-style: none; /* Remove default list styling */
     padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
     display: flex; /* Display list items in a row */
+    flex: 1; /* Allow navbar items to grow and fill space */
+    justify-content: center; /* Center the items horizontally */
 }
 .navbar-nav li {
     margin: 0 10px; /* Add space between list items */
@@ -36,11 +46,12 @@ html, body {
     transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 .navbar-nav li a i {
-    margin-right: 30px; /* Add space between icon and text */
+    margin-right: 15px; /* Add space between icon and text */
 }
 .navbar-nav li:hover a {
     border-color: #333; /* Change border color on hover */
     background-color: #f0f0f0; /* Optional: Change background color on hover */
+    border-radius: 10px;
 }
 .navbar-nav li a:hover {
     text-decoration: none; /* Ensure no underline on hover */
@@ -104,7 +115,7 @@ html, body {
     border-radius: 10px;
     width: 100%;
     padding: 10px;
-    font-size: 4vh;
+    font-size: 24px;
 }
 .btnDonwload:hover {
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2), -5px -5px 25px rgba(192, 151, 151, 0.2);
@@ -132,12 +143,11 @@ html, body {
     border-radius: 100%;
 }
 
-/* Section Style */
-.divServices, .divSkills {
+/* Content Style */
+.divServices, .divSkills, .divContact {
     margin-top: 100px;
-    overflow: hidden; /* Prevents content overflow */
 }
-.divServices h2, .divSkills h2 {
+.divServices h2, .divSkills h2, .divContact h2 {
     font-family: 'Roboto', sans-serif;
 }
 .divServices h3, .divSkills h3 {
@@ -166,7 +176,6 @@ html, body {
 /* Services style */
 .card {
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border: none;
     transition: transform 0.3s, box-shadow 0.3s;
 }
