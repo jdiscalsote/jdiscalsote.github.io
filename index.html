@@ -305,17 +305,31 @@
 
             <br/>
 
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="from_name" name="from_name" required><br><br>
+            <form class="contact-form" id="contact-form" onsubmit="return validateForm()">
+                <h5>Please fill this form in a decent manner.</h5>
+
+                <br/>
+
+                <label for="name">Full Name <span class="text-red">*</span></label>
+                <div class="row">
+                    <div class="col-sm col-md">
+                        <input type="text" id="firstNam" name="firstNam" placeholder="First Name" autocomplete="off" required>
+                    </div>
+                    <div class="col-sm col-md">
+                        <input type="text" id="lastNam" name="lastNam" placeholder="Last Name" autocomplete="off" required>
+                    </div>
+                </div>
         
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
+                <label for="email">Email <span class="text-red">*</span></label>
+                <input type="email" id="email" name="email" autocomplete="off" required>
         
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea><br><br>
+                <label for="message">Subject <span class="text-red">*</span></label>
+                <input id="subject" name="subject" autocomplete="off" required>
         
-                <button type="submit">Send</button>
+                <label for="message">Message <span class="text-red">*</span></label>
+                <textarea id="message" name="message" rows="3" autocomplete="off" required></textarea>
+        
+                <button type="submit">Send&nbsp;<i class="fa fa-send"></i></button>
             </form>
 
             <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -327,13 +341,51 @@
                 document.getElementById('contact-form').addEventListener('submit', function(event) {
                     event.preventDefault();
         
-                    emailjs.sendForm('service_aautmzr', 'john_qwerty', this)
-                        .then(function() {
+                    // Collect form data
+                    var fname = document.getElementById('firstNam').value;
+                    var lname = document.getElementById('lastNam').value;
+                    var email = document.getElementById('email').value;
+                    var message = document.getElementById('message').value;
+                    var subject = document.getElementById('subject').value;
+        
+                    // Prepare the email parameters
+                    var templateParams = {
+                        from_name: fname + " " + lname,
+                        from_email: email,
+                        message: message,
+                        subject: subject
+                    };
+        
+                    emailjs.send('service_96wxqqs', 'john_qwerty', templateParams)
+                        .then(function(response) {
                             alert('Your message has been sent successfully!');
+                            document.getElementById("contact-form").reset();
                         }, function(error) {
                             alert('Failed to send the message. Please try again later.');
+                            document.getElementById("contact-form").reset();
                         });
                 });
+
+                function validateForm() {
+                    var fname = document.getElementById('firstNam').value;
+                    var lname = document.getElementById('lastNam').value;
+                    var email = document.getElementById('email').value;
+                    var subject = document.getElementById('subject').value;
+                    var message = document.getElementById('message').value;
+
+                    if (fname == "" || lname == "" || email == "" || subject == "" || message == "") {
+                        alert("All fields must be filled out");
+                        return false;
+                    }
+
+                    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                    if (!emailPattern.test(email)) {
+                        alert("Please enter a valid email address");
+                        return false;
+                    }
+
+                    return true;
+                }
             </script>
         </div>
     </content>
