@@ -276,7 +276,7 @@ html, body {
     font-size: 16px;
 }
 .contact-form button i {
-    margin-left: 15px;
+    margin-right: 10px;
 }
 .contact-form button:hover {
     background-color: #001d34;
