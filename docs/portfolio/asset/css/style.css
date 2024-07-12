@@ -1,6 +1,6 @@
 html, body {
-    margin: 10px;
     padding: 10px;
+    margin: 10px;
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
 }
@@ -280,4 +280,54 @@ html, body {
 }
 .contact-form button:hover {
     background-color: #001d34;
+}
+.form-group {
+    padding: 10px;
+}
+.form-group p, .form-group ul {
+    margin-top: -20px;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Footer Styles */
+.footer {
+    color: #282828; /* Light text color for readability */
+    text-align: center; /* Center-align text */
+    padding: 0; /* Vertical padding for spacing */
+    font-family: 'Arial', sans-serif; /* Clean, modern font */
+    position: relative; /* Allows for positioning child elements */
+    border-top: 2px solid #f1f1f1; /* Light border at the top for separation */
+}
+
+.footer p {
+    margin: 0; /* Remove default margins */
+    font-size: 1rem; /* Set font size */
+    letter-spacing: 1px; /* Slight letter spacing for readability */
+}
+
+/* Decorative Line (Optional) */
+.footer:before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #f1c40f; /* Accent color */
+    margin: 10px auto 20px; /* Centered with margin */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 0; /* Adjust padding for smaller screens */
+    }
+
+    .footer p {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
 }
