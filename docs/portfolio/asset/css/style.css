@@ -311,7 +311,7 @@ html, body {
 
 .footer p {
     margin: 0; /* Remove default margins */
-    font-size: 1rem; /* Set font size */
+    font-size: 0.8rem; /* Set font size */
     letter-spacing: 1px; /* Slight letter spacing for readability */
 }
 
