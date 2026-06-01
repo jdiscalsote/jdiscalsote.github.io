@@ -131,6 +131,12 @@ img {
   border: 2px solid rgba(37, 99, 235, 0.28);
 }
 
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
 .btn {
   border-radius: var(--radius-md);
   font-weight: 700;
@@ -297,6 +303,11 @@ img {
   border-color: rgba(37, 99, 235, 0.36);
 }
 
+.theme-toggle-compact {
+  min-height: 44px;
+  padding: 0.62rem 0.75rem;
+}
+
 .mobile-menu {
   --bs-offcanvas-width: min(86vw, 340px);
   background: var(--color-surface);
@@ -448,73 +459,10 @@ img {
   gap: 0.55rem;
 }
 
-.hero-portrait {
-  position: relative;
-  isolation: isolate;
-}
-
-.hero-portrait::before {
-  content: "";
-  position: absolute;
-  inset: -1.2rem;
-  z-index: -1;
-  border: 1px solid rgba(37, 99, 235, 0.14);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(56, 189, 248, 0.08));
-}
-
-.hero-portrait img,
 .featured-media img,
 .project-card img {
   width: 100%;
   object-fit: cover;
-}
-
-.hero-portrait img {
-  aspect-ratio: 4 / 4.45;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-}
-
-.glass-card {
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(18px);
-  box-shadow: var(--shadow-card);
-}
-
-[data-bs-theme="dark"] .glass-card {
-  border-color: rgba(148, 163, 184, 0.25);
-  background: rgba(15, 23, 42, 0.76);
-}
-
-.portrait-card {
-  position: absolute;
-  right: -0.4rem;
-  bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  max-width: 240px;
-  padding: 0.9rem 1rem;
-  border-radius: var(--radius-lg);
-  color: var(--color-secondary);
-  font-weight: 850;
-}
-
-[data-bs-theme="dark"] .portrait-card {
-  color: var(--color-text);
-}
-
-.portrait-card i {
-  display: inline-grid;
-  flex: 0 0 auto;
-  width: 38px;
-  height: 38px;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(37, 99, 235, 0.12);
-  color: var(--color-primary);
 }
 
 .stats-grid {
@@ -1074,10 +1022,13 @@ img {
     width: 100%;
   }
 
-  .portrait-card {
-    right: 0.75rem;
-    bottom: 0.75rem;
-    max-width: calc(100% - 1.5rem);
+  .theme-toggle-compact span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
   }
 
   .experience-card {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Premium portfolio website for a full stack software engineer.">
+    <meta name="description" content="Portfolio website for John Nicole Discalsote, System Analyst Programmer and enterprise application developer.">
     <title>Project Portfolio</title>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://images.unsplash.com">
@@ -26,12 +26,18 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid px-3">
           <a class="navbar-brand d-flex align-items-center gap-2" href="#home" aria-label="Go to home">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="John D. Calsote profile photo" class="topbar-avatar">
+            <img src="img/profile.png" alt="John Nicole Discalsote profile photo" class="topbar-avatar">
             <span>John Nicole Discalsote</span>
           </a>
-          <button class="btn btn-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open navigation">
-            <i class="bi bi-list"></i>
-          </button>
+          <div class="topbar-actions">
+            <button class="theme-toggle theme-toggle-compact" type="button" data-theme-toggle aria-label="Toggle dark mode">
+              <i class="bi bi-moon-stars"></i>
+              <span>Dark mode</span>
+            </button>
+            <button class="btn btn-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open navigation">
+              <i class="bi bi-list"></i>
+            </button>
+          </div>
         </div>
       </nav>
     </header>
@@ -40,8 +46,8 @@
       <div class="profile-card">
         <img src="img/profile.png" alt="John Nicole Discalsote profile photo" class="profile-photo">
         <h1>John Nicole Discalsote</h1>
-        <p class="designation">Full Stack Software Engineer</p>
-        <p class="tagline">Building reliable enterprise platforms with clean architecture, scalable APIs, and polished user experiences.</p>
+        <p class="designation">System Analyst Programmer</p>
+        <p class="tagline">Building enterprise systems with .NET, Dynamics 365, reliable databases, and practical workflow automation.</p>
         <div class="social-links" aria-label="Social links">
           <a href="https://www.linkedin.com/in/jdiscalsote/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
           <a href="https://github.com/jdiscalsote" aria-label="GitHub"><i class="bi bi-github"></i></a>
@@ -67,10 +73,10 @@
     <div class="offcanvas offcanvas-start mobile-menu" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
       <div class="offcanvas-header">
         <div class="d-flex align-items-center gap-3">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="John Nicole Discalsote profile photo" class="topbar-avatar">
+          <img src="img/profile.png" alt="John Nicole Discalsote profile photo" class="topbar-avatar">
           <div>
-            <h2 id="mobileMenuLabel" class="offcanvas-title">John D. Calsote</h2>
-            <p class="mb-0">Full Stack Developer</p>
+            <h2 id="mobileMenuLabel" class="offcanvas-title">John Nicole Discalsote</h2>
+            <p class="mb-0">System Analyst Programmer</p>
           </div>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -100,26 +106,17 @@
         </div>
         <div class="container-fluid">
           <div class="row align-items-center g-5">
-            <div class="col-xl-7 order-2 order-xl-1">
+            <div class="col-xl-10 col-xxl-9">
               <div class="hero-copy reveal">
                 <span class="eyebrow">System Analyst Programmer</span>
                 <h2>John Nicole Discalsote</h2>
                 <p class="hero-title">
-                  <span id="typingText" aria-live="polite">Full Stack Software Engineer</span>
+                  <span id="typingText" aria-live="polite">System Analyst Programmer</span>
                 </p>
-                <p class="hero-intro">I design and ship dependable web platforms for operations, analytics, and customer-facing teams, from database schema and API contracts to secure dashboards and refined front-end workflows.</p>
+                <p class="hero-intro">I design, develop, and support enterprise-grade business applications, from secure backend systems and database structures to Dynamics 365 workflows, reporting, and production issue resolution.</p>
                 <div class="hero-actions">
-                  <a class="btn btn-primary btn-lg" href="#" download><i class="bi bi-download"></i>Download Resume</a>
+                  <a class="btn btn-primary btn-lg" href="#contact"><i class="bi bi-person-check"></i>Hire Me</a>
                   <a class="btn btn-outline-primary btn-lg" href="#projects"><i class="bi bi-arrow-right-circle"></i>View Projects</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-5 order-1 order-xl-2">
-              <div class="hero-portrait reveal">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1100&q=85" alt="Developer workspace with engineering dashboards">
-                <div class="portrait-card glass-card">
-                  <i class="bi bi-shield-check"></i>
-                  <span>Production-minded systems</span>
                 </div>
               </div>
             </div>
@@ -127,15 +124,19 @@
 
           <div class="stats-grid reveal">
             <article class="stat-card">
-              <span class="stat-number" data-counter="7">0</span>
+              <span class="stat-number" data-counter="5">0</span>
               <p>Years Experience</p>
             </article>
             <article class="stat-card">
-              <span class="stat-number" data-counter="42">0</span>
+              <span class="stat-number" data-counter="8">0</span>
+              <p>Projects Started</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-number" data-counter="7">0</span>
               <p>Projects Completed</p>
             </article>
             <article class="stat-card">
-              <span class="stat-number" data-counter="28">0</span>
+              <span class="stat-number" data-counter="13">0</span>
               <p>Technologies Used</p>
             </article>
           </div>
@@ -146,34 +147,35 @@
         <div class="container-fluid">
           <div class="section-heading reveal">
             <span class="eyebrow">About Me</span>
-            <h2>Engineering durable products for real business workflows.</h2>
+            <h2>Engineering enterprise systems for real business workflows.</h2>
           </div>
           <div class="row g-4">
             <div class="col-xl-7">
               <article class="content-card reveal">
-                <p>I am a full stack software engineer focused on turning complex operational needs into straightforward, maintainable applications. My work spans responsive interfaces, API design, relational data modeling, cloud deployment, and long-term product support.</p>
-                <p>My mission is to build software that earns trust: predictable under load, clear for users, and simple enough for engineering teams to evolve without fear.</p>
+                <p>I am a System Analyst Programmer focused on enterprise applications, support stability, and business workflow automation. My work spans ASP.NET, Blazor, Web API, relational databases, Dynamics 365, Azure DevOps, reporting, and long-term production support.</p>
+                <p>Across real estate, enterprise technology, and application support teams, I build systems that are maintainable, reliable under daily operations, and clear enough for users and teams to improve over time.</p>
                 <div class="strength-grid">
                   <div><i class="bi bi-diagram-3"></i><span>System Design</span></div>
-                  <div><i class="bi bi-speedometer2"></i><span>Performance</span></div>
-                  <div><i class="bi bi-lock"></i><span>Security</span></div>
-                  <div><i class="bi bi-people"></i><span>Team Delivery</span></div>
+                  <div><i class="bi bi-speedometer2"></i><span>Production Support</span></div>
+                  <div><i class="bi bi-database-check"></i><span>Data Reliability</span></div>
+                  <div><i class="bi bi-people"></i><span>Agile Delivery</span></div>
                 </div>
               </article>
             </div>
             <div class="col-xl-5">
               <div class="quick-info-grid reveal">
-                <article class="info-card"><i class="bi bi-geo-alt"></i><span>Location</span><strong>Philippines, Remote-ready</strong></article>
-                <article class="info-card"><i class="bi bi-calendar-check"></i><span>Experience</span><strong>7+ years</strong></article>
-                <article class="info-card"><i class="bi bi-building"></i><span>Industry</span><strong>SaaS, ERP, FinTech</strong></article>
-                <article class="info-card"><i class="bi bi-check2-circle"></i><span>Availability</span><strong>Open to senior roles</strong></article>
+                <article class="info-card"><i class="bi bi-geo-alt"></i><span>Location</span><strong>Noveleta, Cavite, Philippines</strong></article>
+                <article class="info-card"><i class="bi bi-calendar-check"></i><span>Experience</span><strong>5+ years</strong></article>
+                <article class="info-card"><i class="bi bi-building"></i><span>Industry</span><strong>Real Estate, Enterprise Systems</strong></article>
+                <article class="info-card"><i class="bi bi-check2-circle"></i><span>Current Role</span><strong>System Analyst Programmer</strong></article>
               </div>
             </div>
           </div>
           <div class="timeline-strip reveal">
-            <article><span>2018</span><p>Started delivering internal business tools and support platforms.</p></article>
-            <article><span>2021</span><p>Led API integrations and reporting systems for multi-team workflows.</p></article>
-            <article><span>2024</span><p>Architected cloud-ready applications with stronger observability.</p></article>
+            <article><span>2019</span><p>Built a reservation system prototype during intensive technical training.</p></article>
+            <article><span>2020</span><p>Delivered HRIS and performance management systems at New San Jose Builders.</p></article>
+            <article><span>2021</span><p>Supported and enhanced enterprise applications at Federal Land.</p></article>
+            <article><span>2025</span><p>Architecting Ticketing, Procurement, ESS, HRMS, and ERP systems.</p></article>
           </div>
         </div>
       </section>
@@ -189,48 +191,90 @@
               <div class="timeline-dot"></div>
               <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
                 <div>
-                  <h3>Senior Full Stack Developer</h3>
-                  <p class="company">Northstar Systems Group</p>
+                  <h3>System Analyst Programmer</h3>
+                  <p class="company">New San Jose Builders Inc.</p>
                 </div>
-                <span class="period">2023 - Present</span>
+                <span class="period">Jul 2025 - Present</span>
               </div>
-              <p>Owns architecture and delivery for enterprise dashboards, workflow automation, and partner API integrations.</p>
+              <p>Architects and delivers enterprise-grade applications from system design through deployment.</p>
               <ul>
-                <li>Reduced report generation time by 68% with queued processing and optimized SQL views.</li>
-                <li>Introduced reusable Bootstrap component patterns for faster feature delivery.</li>
-                <li>Improved release confidence with smoke tests and deployment checklists.</li>
+                <li>Designs secure backend systems, data structures, and integrations across enterprise applications.</li>
+                <li>Builds Ticketing, Procurement, ESS, HRMS, and ERP systems for business operations.</li>
+                <li>Supports AI-driven mobile application features that improve efficiency and user experience.</li>
               </ul>
             </article>
             <article class="experience-card reveal">
               <div class="timeline-dot"></div>
               <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
                 <div>
-                  <h3>Software Engineer</h3>
-                  <p class="company">BrightLayer Digital</p>
+                  <h3>Package App Development Analyst</h3>
+                  <p class="company">Accenture</p>
                 </div>
-                <span class="period">2020 - 2023</span>
+                <span class="period">Jul 2023 - Feb 2025</span>
               </div>
-              <p>Built customer portals, administrative tools, and secure REST APIs for high-volume operational teams.</p>
+              <p>Resolved critical enterprise system issues as a level-3 escalation point.</p>
               <ul>
-                <li>Delivered a role-based portal used by support, finance, and account managers.</li>
-                <li>Integrated payment, notification, and analytics providers with resilient retry handling.</li>
-                <li>Standardized code review practices across frontend and backend teams.</li>
+                <li>Performed root cause analysis and delivered permanent fixes for production stability.</li>
+                <li>Maintained core business applications and automated workflows for enterprise users.</li>
+                <li>Produced actionable reports and collaborated in Agile delivery cycles.</li>
               </ul>
             </article>
             <article class="experience-card reveal">
               <div class="timeline-dot"></div>
               <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
                 <div>
-                  <h3>Junior Web Developer</h3>
-                  <p class="company">LaunchWorks Studio</p>
+                  <h3>Multi-Platform Programmer</h3>
+                  <p class="company">Federal Land Inc.</p>
                 </div>
-                <span class="period">2018 - 2020</span>
+                <span class="period">Oct 2021 - Jul 2023</span>
               </div>
-              <p>Created responsive web applications, CMS features, and internal utilities for growing product teams.</p>
+              <p>Provided high-priority technical support and enhancements across enterprise systems.</p>
               <ul>
-                <li>Built accessible landing pages and admin screens with semantic HTML and Bootstrap.</li>
-                <li>Maintained data import tools that cut manual operations work by 20 hours per month.</li>
-                <li>Partnered with designers to refine UI quality across breakpoints.</li>
+                <li>Diagnosed and resolved critical production issues to reduce operational downtime.</li>
+                <li>Improved workflows, system defects, and process performance for better user experience.</li>
+                <li>Investigated data and integration issues, refined system logic, and created ad-hoc reports.</li>
+              </ul>
+            </article>
+            <article class="experience-card reveal">
+              <div class="timeline-dot"></div>
+              <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+                <div>
+                  <h3>Junior Software Developer</h3>
+                  <p class="company">New San Jose Builders Inc.</p>
+                </div>
+                <span class="period">Sep 2020 - Oct 2021</span>
+              </div>
+              <p>Developed scalable enterprise applications using structured multi-layer architecture.</p>
+              <ul>
+                <li>Delivered HRIS and performance management systems for workforce tracking and evaluation.</li>
+                <li>Provided post-deployment support, production fixes, performance tuning, and feature enhancements.</li>
+                <li>Built maintainable business-critical platforms with long-term stability in mind.</li>
+              </ul>
+            </article>
+            <article class="experience-card reveal">
+              <div class="timeline-dot"></div>
+              <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+                <div>
+                  <h3>Data Encoder</h3>
+                  <p class="company">Quess Corp PH</p>
+                </div>
+                <span class="period">Oct 2019 - Mar 2020</span>
+              </div>
+              <p>Handled data encoding work with attention to accuracy, consistency, and operational deadlines.</p>
+            </article>
+            <article class="experience-card reveal">
+              <div class="timeline-dot"></div>
+              <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+                <div>
+                  <h3>IT Staff / Programmer</h3>
+                  <p class="company">HRD Singapore PTE. LTD.</p>
+                </div>
+                <span class="period">Mar 2019 - Aug 2019</span>
+              </div>
+              <p>Completed technical training and contributed to a functional reservation system prototype.</p>
+              <ul>
+                <li>Built foundational skills in application design, object-oriented programming, and databases.</li>
+                <li>Participated in system design, database structuring, implementation, testing, and demonstration.</li>
               </ul>
             </article>
           </div>
@@ -241,54 +285,54 @@
         <div class="container-fluid">
           <div class="section-heading reveal">
             <span class="eyebrow">Skills</span>
-            <h2>Practical engineering depth across the stack.</h2>
+            <h2>Practical enterprise development skills across the stack.</h2>
           </div>
           <div class="row g-4">
             <div class="col-md-6 col-xl-4 reveal">
               <article class="skill-card">
                 <i class="bi bi-window-stack"></i>
                 <h3>Frontend Development</h3>
-                <div class="skill-progress" data-progress="92"><span>HTML, CSS, Bootstrap, JavaScript</span><div class="progress"><div class="progress-bar"></div></div></div>
-                <div class="badge-list"><span>Bootstrap 5</span><span>React</span><span>Accessibility</span></div>
+                <div class="skill-progress" data-progress="90"><span>HTML, CSS, JavaScript, Bootstrap 5</span><div class="progress"><div class="progress-bar"></div></div></div>
+                <div class="badge-list"><span>Bootstrap 5</span><span>MudBlazor</span><span>Blazor UI</span></div>
               </article>
             </div>
             <div class="col-md-6 col-xl-4 reveal">
               <article class="skill-card">
                 <i class="bi bi-hdd-network"></i>
-                <h3>Backend Development</h3>
-                <div class="skill-progress" data-progress="88"><span>Node.js, PHP, REST APIs</span><div class="progress"><div class="progress-bar"></div></div></div>
-                <div class="badge-list"><span>Laravel</span><span>Express</span><span>Auth</span></div>
+                <h3>.NET Development</h3>
+                <div class="skill-progress" data-progress="88"><span>C#, VB.Net, ASP.NET Core</span><div class="progress"><div class="progress-bar"></div></div></div>
+                <div class="badge-list"><span>MVC</span><span>Web API</span><span>Entity Framework</span></div>
               </article>
             </div>
             <div class="col-md-6 col-xl-4 reveal">
               <article class="skill-card">
                 <i class="bi bi-database"></i>
                 <h3>Database</h3>
-                <div class="skill-progress" data-progress="86"><span>Schema design and tuning</span><div class="progress"><div class="progress-bar"></div></div></div>
-                <div class="badge-list"><span>MySQL</span><span>PostgreSQL</span><span>Redis</span></div>
+                <div class="skill-progress" data-progress="86"><span>Schema design, reporting, data accuracy</span><div class="progress"><div class="progress-bar"></div></div></div>
+                <div class="badge-list"><span>MSSQL</span><span>Oracle</span><span>LINQ</span></div>
               </article>
             </div>
             <div class="col-md-6 col-xl-4 reveal">
               <article class="skill-card">
                 <i class="bi bi-cloud-check"></i>
-                <h3>Cloud & DevOps</h3>
-                <div class="skill-progress" data-progress="80"><span>Deployments and monitoring</span><div class="progress"><div class="progress-bar"></div></div></div>
-                <div class="badge-list"><span>AWS</span><span>Docker</span><span>CI/CD</span></div>
+                <h3>Enterprise Platforms</h3>
+                <div class="skill-progress" data-progress="82"><span>Dynamics 365 and workflow automation</span><div class="progress"><div class="progress-bar"></div></div></div>
+                <div class="badge-list"><span>PowerApps</span><span>Power Automate</span><span>F&O</span></div>
               </article>
             </div>
             <div class="col-md-6 col-xl-4 reveal">
               <article class="skill-card">
                 <i class="bi bi-tools"></i>
-                <h3>Tools & Platforms</h3>
-                <div class="skill-progress" data-progress="90"><span>Delivery and collaboration</span><div class="progress"><div class="progress-bar"></div></div></div>
-                <div class="badge-list"><span>Git</span><span>Jira</span><span>Figma</span></div>
+                <h3>Delivery & Support</h3>
+                <div class="skill-progress" data-progress="90"><span>Agile delivery, L3 support, root cause analysis</span><div class="progress"><div class="progress-bar"></div></div></div>
+                <div class="badge-list"><span>Azure DevOps</span><span>Reports</span><span>Production Fixes</span></div>
               </article>
             </div>
             <div class="col-md-6 col-xl-4 reveal">
               <article class="skill-card featured-skill">
                 <i class="bi bi-stars"></i>
                 <h3>Architecture</h3>
-                <p>Clean module boundaries, maintainable data flows, and clear operational visibility for teams that need software to last.</p>
+                <p>Structured multi-layer application design, secure backend systems, reliable data flows, and maintainable enterprise platforms.</p>
               </article>
             </div>
           </div>
@@ -299,7 +343,7 @@
         <div class="container-fluid">
           <div class="section-heading reveal">
             <span class="eyebrow">Projects</span>
-            <h2>Product-grade work with business context.</h2>
+            <h2>Enterprise systems started, delivered, and supported.</h2>
           </div>
 
           <article class="featured-project reveal">
@@ -307,24 +351,20 @@
               <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85" alt="Analytics dashboard project preview">
             </div>
             <div class="featured-copy">
-              <span class="project-type">Featured Enterprise Application</span>
-              <h3>Operations Intelligence Suite</h3>
-              <p>A multi-role analytics platform that centralizes operational metrics, exception handling, and automated executive reporting.</p>
-              <div class="badge-list"><span>Bootstrap</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span></div>
-              <div class="project-actions">
-                <a class="btn btn-primary" href="#"><i class="bi bi-box-arrow-up-right"></i>Live Demo</a>
-                <a class="btn btn-outline-primary" href="#"><i class="bi bi-github"></i>Source Code</a>
-              </div>
+              <span class="project-type">Featured Enterprise Systems</span>
+              <h3>Business Operations Application Suite</h3>
+              <p>A collection of enterprise solutions for Ticketing, Procurement, ESS, HRMS, and ERP workflows, supported by secure backend systems, reliable data structures, and production-ready enhancements.</p>
+              <div class="badge-list"><span>ASP.NET Core</span><span>Web API</span><span>MSSQL</span><span>Azure DevOps</span></div>
             </div>
           </article>
 
           <div class="filter-toolbar reveal" role="group" aria-label="Project filters">
             <button class="btn active" type="button" data-filter="all">All</button>
             <button class="btn" type="button" data-filter="enterprise">Enterprise</button>
-            <button class="btn" type="button" data-filter="web">Web Apps</button>
-            <button class="btn" type="button" data-filter="mobile">Mobile</button>
-            <button class="btn" type="button" data-filter="api">APIs</button>
-            <button class="btn" type="button" data-filter="internal">Internal</button>
+            <button class="btn" type="button" data-filter="hr">HR Systems</button>
+            <button class="btn" type="button" data-filter="workflow">Workflow</button>
+            <button class="btn" type="button" data-filter="platform">Platforms</button>
+            <button class="btn" type="button" data-filter="prototype">Prototype</button>
           </div>
 
           <div class="project-grid">
@@ -332,70 +372,70 @@
               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Revenue dashboard interface">
               <div class="project-body">
                 <span>Enterprise Applications</span>
-                <h3>Revenue Control Center</h3>
-                <p>Role-based finance dashboards with approval workflows, audit logs, and automated variance alerts.</p>
-                <ul><li>Approval matrix</li><li>Exportable analytics</li><li>Audit-ready activity logs</li></ul>
-                <div class="badge-list"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></div>
-                <div class="project-actions">
-                  <a class="btn btn-sm btn-primary" href="#">Live Demo</a>
-                  <a class="btn btn-sm btn-outline-primary" href="#">Source Code</a>
-                </div>
+                <h3>ERP System</h3>
+                <p>Enterprise resource planning work for core business operations, focused on stable data flow, system reliability, and cross-application integration.</p>
+                <ul><li>Business process support</li><li>Backend structures</li><li>Enterprise integration</li></ul>
+                <div class="badge-list"><span>ASP.NET Core</span><span>MSSQL</span><span>Web API</span></div>
               </div>
             </article>
-            <article class="project-card reveal" data-category="web">
+            <article class="project-card reveal" data-category="workflow">
               <img src="https://images.unsplash.com/photo-1559028006-448665bd7c7f?auto=format&fit=crop&w=900&q=80" alt="Web application design screens">
               <div class="project-body">
-                <span>Web Applications</span>
-                <h3>Client Service Portal</h3>
-                <p>Self-service portal with tickets, billing views, document uploads, and account-level permissions.</p>
-                <ul><li>Secure file intake</li><li>Ticket SLA tracking</li><li>Responsive workflows</li></ul>
-                <div class="badge-list"><span>React</span><span>Express</span><span>Redis</span></div>
-                <div class="project-actions">
-                  <a class="btn btn-sm btn-primary" href="#">Live Demo</a>
-                  <a class="btn btn-sm btn-outline-primary" href="#">Source Code</a>
-                </div>
+                <span>Workflow Systems</span>
+                <h3>Ticketing System</h3>
+                <p>Internal support workflow for tracking requests, resolving production concerns, and improving operational visibility for business users.</p>
+                <ul><li>Request tracking</li><li>Issue resolution flow</li><li>User support visibility</li></ul>
+                <div class="badge-list"><span>Bootstrap 5</span><span>ASP.NET</span><span>Reports</span></div>
               </div>
             </article>
-            <article class="project-card reveal" data-category="mobile">
+            <article class="project-card reveal" data-category="workflow">
               <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80" alt="Mobile app project preview">
               <div class="project-body">
-                <span>Mobile Applications</span>
-                <h3>Field Operations Companion</h3>
-                <p>Mobile-first task management flow for field staff with offline-friendly status updates.</p>
-                <ul><li>Checklist templates</li><li>Photo evidence</li><li>Sync queue</li></ul>
-                <div class="badge-list"><span>PWA</span><span>IndexedDB</span><span>API</span></div>
-                <div class="project-actions">
-                  <a class="btn btn-sm btn-primary" href="#">Live Demo</a>
-                  <a class="btn btn-sm btn-outline-primary" href="#">Source Code</a>
-                </div>
+                <span>Workflow Systems</span>
+                <h3>Procurement System</h3>
+                <p>Procurement workflow application supporting request handling, process consistency, and operational efficiency for internal teams.</p>
+                <ul><li>Procurement requests</li><li>Approval support</li><li>Process tracking</li></ul>
+                <div class="badge-list"><span>C#</span><span>MSSQL</span><span>LINQ</span></div>
               </div>
             </article>
-            <article class="project-card reveal" data-category="api">
+            <article class="project-card reveal" data-category="hr">
               <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80" alt="Server infrastructure preview">
               <div class="project-body">
-                <span>APIs</span>
-                <h3>Partner Integration Gateway</h3>
-                <p>Versioned REST API service with request signing, rate limits, retries, and operational dashboards.</p>
-                <ul><li>Token management</li><li>Webhook retries</li><li>Usage telemetry</li></ul>
-                <div class="badge-list"><span>Node.js</span><span>JWT</span><span>Docker</span></div>
-                <div class="project-actions">
-                  <a class="btn btn-sm btn-primary" href="#">Live Demo</a>
-                  <a class="btn btn-sm btn-outline-primary" href="#">Source Code</a>
-                </div>
+                <span>HR Systems</span>
+                <h3>HRIS & Performance Management</h3>
+                <p>Human resource and performance management systems that streamline workforce tracking, evaluation, and post-deployment support needs.</p>
+                <ul><li>Employee records</li><li>Performance evaluation</li><li>System enhancements</li></ul>
+                <div class="badge-list"><span>ASP.NET MVC</span><span>Entity Framework</span><span>MSSQL</span></div>
               </div>
             </article>
-            <article class="project-card reveal" data-category="internal">
+            <article class="project-card reveal" data-category="hr">
               <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Team collaboration workflow">
               <div class="project-body">
-                <span>Internal Systems</span>
-                <h3>Support Automation Hub</h3>
-                <p>Internal workflow engine that routes requests, suggests templates, and tracks resolution quality.</p>
-                <ul><li>Queue assignment</li><li>Template library</li><li>Team metrics</li></ul>
-                <div class="badge-list"><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
-                <div class="project-actions">
-                  <a class="btn btn-sm btn-primary" href="#">Live Demo</a>
-                  <a class="btn btn-sm btn-outline-primary" href="#">Source Code</a>
-                </div>
+                <span>HR Systems</span>
+                <h3>ESS & HRMS</h3>
+                <p>Employee self-service and HR management systems for internal business users, focused on consistent workflows and maintainable operations.</p>
+                <ul><li>Employee self-service</li><li>HR workflows</li><li>Operational support</li></ul>
+                <div class="badge-list"><span>Blazor</span><span>MudBlazor</span><span>Web API</span></div>
+              </div>
+            </article>
+            <article class="project-card reveal" data-category="platform">
+              <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" alt="Enterprise team planning software">
+              <div class="project-body">
+                <span>Enterprise Platforms</span>
+                <h3>Dynamics 365 Workflow Enhancements</h3>
+                <p>Business application enhancements using Dynamics 365 tools for process automation, enterprise operations, and platform delivery support.</p>
+                <ul><li>PowerApps</li><li>Power Automate</li><li>Finance & Operations</li></ul>
+                <div class="badge-list"><span>Dynamics 365</span><span>Azure DevOps</span><span>Automation</span></div>
+              </div>
+            </article>
+            <article class="project-card reveal" data-category="prototype">
+              <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80" alt="Reservation planning board">
+              <div class="project-body">
+                <span>Prototype</span>
+                <h3>Reservation System Prototype</h3>
+                <p>Functional reservation system completed during technical training, covering design, database structure, implementation, testing, and formal demonstration.</p>
+                <ul><li>System design</li><li>Database structure</li><li>Live demonstration</li></ul>
+                <div class="badge-list"><span>OOP</span><span>Database</span><span>Testing</span></div>
               </div>
             </article>
           </div>
@@ -411,10 +451,10 @@
           <div class="row g-4">
             <div class="col-xl-5">
               <div class="contact-list reveal">
-                <a class="contact-card" href="mailto:john.calsote@example.com"><i class="bi bi-envelope"></i><span>Email</span><strong>john.calsote@example.com</strong></a>
-                <a class="contact-card" href="tel:+639171234567"><i class="bi bi-telephone"></i><span>Phone</span><strong>+63 917 123 4567</strong></a>
-                <a class="contact-card" href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i><span>LinkedIn</span><strong>linkedin.com/in/johndcalsote</strong></a>
-                <a class="contact-card" href="https://github.com/"><i class="bi bi-github"></i><span>GitHub</span><strong>github.com/jdiscalsote</strong></a>
+                <a class="contact-card" href="mailto:njdiscalsote25@gmail.com"><i class="bi bi-envelope"></i><span>Email</span><strong>njdiscalsote25@gmail.com</strong></a>
+                <a class="contact-card" href="tel:+639765267317"><i class="bi bi-telephone"></i><span>Phone</span><strong>+63 976 526 7317</strong></a>
+                <a class="contact-card" href="https://www.linkedin.com/in/jdiscalsote/"><i class="bi bi-linkedin"></i><span>LinkedIn</span><strong>linkedin.com/in/jdiscalsote</strong></a>
+                <a class="contact-card" href="https://github.com/jdiscalsote/"><i class="bi bi-github"></i><span>GitHub</span><strong>github.com/jdiscalsote</strong></a>
                 <div class="contact-card"><i class="bi bi-geo-alt"></i><span>Location</span><strong>Philippines</strong></div>
               </div>
             </div>
@@ -454,11 +494,11 @@
 
       <footer class="site-footer">
         <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
-          <p class="mb-0">&copy; 2026 John D. Calsote. All rights reserved.</p>
+          <p class="mb-0">&copy; 2026 John Nicole Discalsote. All rights reserved.</p>
           <div class="social-links">
-            <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="https://github.com/" aria-label="GitHub"><i class="bi bi-github"></i></a>
-            <a href="mailto:john.calsote@example.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+            <a href="https://www.linkedin.com/in/jdiscalsote/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/jdiscalsote/" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="mailto:njdiscalsote25@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
           </div>
         </div>
       </footer>
