@@ -193,8 +193,8 @@ img {
 }
 
 .profile-photo {
-  width: 122px;
-  height: 122px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto 1rem;
   border-radius: 50%;
   object-fit: cover;
@@ -215,17 +215,6 @@ img {
 [data-bs-theme="dark"] .section-heading h2,
 [data-bs-theme="dark"] h3 {
   color: #f8fafc;
-}
-
-.designation {
-  margin-bottom: 0.5rem;
-  color: var(--color-primary);
-  font-weight: 800;
-}
-
-.tagline {
-  color: var(--color-muted);
-  font-size: 0.9rem;
 }
 
 .social-links {
@@ -561,7 +550,7 @@ img {
 
 .strength-grid i,
 .info-card i,
-.skill-card > i,
+.skill-card>i,
 .contact-card i {
   display: inline-grid;
   flex: 0 0 auto;
@@ -752,7 +741,7 @@ img {
   color: #fff;
 }
 
-.featured-skill > i {
+.featured-skill>i {
   background: rgba(255, 255, 255, 0.16);
   color: #fff;
 }
@@ -1005,6 +994,7 @@ img {
 }
 
 @media (max-width: 767.98px) {
+
   .stats-grid,
   .timeline-strip,
   .quick-info-grid,
@@ -1046,6 +1036,7 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -1074,6 +1065,7 @@ img {
 }
 
 @keyframes floatShape {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0) rotate(0deg);
@@ -1085,6 +1077,7 @@ img {
 }
 
 @keyframes blink {
+
   0%,
   45% {
     opacity: 1;

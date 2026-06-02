@@ -78,6 +78,37 @@
     type();
   }
 
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("#desktopNav .nav-link");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      // If the section is currently visible on the screen
+      if (entry.isIntersecting) {
+        // Clear active classes from all links
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          link.removeAttribute("aria-current");
+        });
+
+        // Find the link that matches the current section's ID
+        const activeId = entry.target.getAttribute("id");
+        const activeLink = document.querySelector(`#desktopNav .nav-link[href="#${activeId}"]`);
+
+        // Add active class to the correct link
+        if (activeLink) {
+          activeLink.classList.add("active");
+          activeLink.setAttribute("aria-current", "page");
+        }
+      }
+    });
+  }, {
+    // Trigger when just 20% of the section enters the screen
+    threshold: 0.2
+  });
+
+  sections.forEach((section) => observer.observe(section));
+
   const counters = document.querySelectorAll("[data-counter]");
   const progressItems = document.querySelectorAll("[data-progress]");
   const revealItems = document.querySelectorAll(".reveal");
