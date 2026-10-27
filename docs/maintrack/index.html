@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maintrack: vehicle maintenance tracker that works offline</title>
+  <meta name="description" content="Never forget a service. Maintrack logs oil changes, PMS, filters and more, reminds you before they&rsquo;re due, and keeps all your data on your phone. Free, offline, no account.">
+  <meta name="theme-color" content="#E8590C">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://{{DOMAIN}}/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Maintrack">
+  <meta property="og:title" content="Maintrack: vehicle maintenance tracker that works offline">
+  <meta property="og:description" content="Never forget a service. Maintrack logs oil changes, PMS, filters and more, reminds you before they&rsquo;re due, and keeps all your data on your phone. Free, offline, no account.">
+  <meta property="og:url" content="https://{{DOMAIN}}/">
+  <meta property="og:image" content="https://{{DOMAIN}}/assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <script>
+  (function () {
+    var m = matchMedia("(prefers-color-scheme: dark)");
+    function set() { document.documentElement.setAttribute("data-bs-theme", m.matches ? "dark" : "light"); }
+    set(); m.addEventListener("change", set);
+  })();
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Maintrack",
+  "operatingSystem": "Android 7.0+",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Vehicle maintenance tracker that works offline. Log services, get reminders, scan your odometer. All data stays on your phone.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://github.com/{{REPO}}/releases/latest",
+  "url": "https://{{DOMAIN}}/"
+}
+  </script>
+</head>
+<body>
+  <a class="visually-hidden-focusable position-absolute z-3 p-2 bg-body" href="#main">Skip to content</a>
+  <nav class="navbar navbar-expand-md sticky-top bg-body border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+        <img src="assets/img/icon.svg" alt="" width="32" height="32"> Maintrack
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-md-center gap-md-1">
+          <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#how">How it works</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#privacy">Privacy</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+          <li class="nav-item ms-md-2"><a class="btn btn-primary" href="index.html#download">Download</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <header class="hero text-white py-5">
+      <div class="container py-lg-4">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold">Never forget a service again.</h1>
+            <p class="lead mt-3">Maintrack keeps a log of every oil change, PMS, filter and part on your vehicle, and reminds you before the next one is due. Free, offline, and your data never leaves your phone.</p>
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start mt-4">
+              <a class="btn btn-light btn-lg" href="https://github.com/{{REPO}}/releases/latest"><i class="bi bi-android2 me-2" aria-hidden="true"></i>Download for Android</a>
+              <a class="btn btn-outline-light btn-lg" href="#features">See features</a>
+            </div>
+            <p class="small mt-3 mb-0">Android 7.0 or newer &middot; Free &middot; No account &middot; No ads</p>
+          </div>
+          <div class="col-lg-5 text-center">
+            <img class="img-fluid rounded-5 shadow-lg" src="assets/img/icon.svg" width="280" height="280" alt="Maintrack app icon: a gauge with a check mark">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="features" class="py-5">
+      <div class="container py-lg-4">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <h2 class="display-6 fw-bold">Everything your vehicle logbook should be</h2>
+            <p class="lead text-body-secondary mb-0">Simple enough to use in the garage, thorough enough to keep a full history.</p>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="bi bi-journal-check fs-1 text-primary" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Every service in one log</h3>
+              <p class="mb-0 text-body-secondary">Record the date, odometer, cost and notes for oil changes, gear oil, PMS, air filters, CVT cleaning and any part you add.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="bi bi-speedometer2 fs-1 text-primary" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Know what&rsquo;s due</h3>
+              <p class="mb-0 text-body-secondary">See at a glance what is overdue, due soon or on track, with a progress bar for every part.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="bi bi-bell fs-1 text-primary" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Reminders that work offline</h3>
+              <p class="mb-0 text-body-secondary">Get a notification before a service is due and follow-ups if it&rsquo;s overdue. Distance-based items use your own usage to estimate the date.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="bi bi-camera fs-1 text-primary" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Scan your odometer</h3>
+              <p class="mb-0 text-body-secondary">Point the camera at your gauge and the number is read on your phone. You check it before saving.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="bi bi-receipt fs-1 text-primary" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Receipt photos</h3>
+              <p class="mb-0 text-body-secondary">Attach a photo of the receipt. The total is detected on your device, and you can correct it before saving.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="bi bi-car-front fs-1 text-primary" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">More than one vehicle</h3>
+              <p class="mb-0 text-body-secondary">Track a scooter, a motorcycle and a car in the same app, each with its own history and service intervals.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="bi bi-box-arrow-up fs-1 text-primary" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Back up and export</h3>
+              <p class="mb-0 text-body-secondary">Export your records as JSON or CSV, and import a backup any time you switch phones.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="bi bi-moon-stars fs-1 text-primary" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Light, dark and full screen</h3>
+              <p class="mb-0 text-body-secondary">Follows your phone&rsquo;s theme, shows your currency, and can hide the system bars for a clean, app-like view.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <i class="bi bi-shield-lock fs-1 text-primary" aria-hidden="true"></i>
+              <h3 class="h5 mt-3">Private by design</h3>
+              <p class="mb-0 text-body-secondary">No account, no ads, no tracking. Everything stays on your phone.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="py-5 bg-body-tertiary">
+      <div class="container py-lg-4">
+        <h2 class="display-6 fw-bold text-center mb-5">How it works</h2>
+        <div class="row g-4 text-center">
+          <div class="col-md-4">
+            <p class="display-3 fw-bold text-primary mb-0">1</p>
+            <h3 class="h5">Add your vehicle</h3>
+            <p class="text-body-secondary">Enter its name and current odometer. Common services and their intervals are ready to use, and you can edit them.</p>
+          </div>
+          <div class="col-md-4">
+            <p class="display-3 fw-bold text-primary mb-0">2</p>
+            <h3 class="h5">Log what you did</h3>
+            <p class="text-body-secondary">After a service, add a record in a few taps. Scan the odometer or attach the receipt if you like.</p>
+          </div>
+          <div class="col-md-4">
+            <p class="display-3 fw-bold text-primary mb-0">3</p>
+            <h3 class="h5">Get reminded</h3>
+            <p class="text-body-secondary">Maintrack works out what&rsquo;s due and notifies you before it is, so you stop guessing when you last changed the oil.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" class="py-5">
+      <div class="container py-lg-4">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h2 class="display-6 fw-bold">Your data stays on your phone</h2>
+            <p class="lead text-body-secondary">Maintrack was built to work without the internet, so there&rsquo;s nothing to sign up for and nothing to send.</p>
+            <a class="btn btn-outline-primary" href="privacy.html">Read the privacy policy</a>
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled fs-5 mb-0">
+              <li class="d-flex gap-3 mb-3"><i class="bi bi-check-circle-fill text-primary" aria-hidden="true"></i><span>No account or sign-up</span></li>
+              <li class="d-flex gap-3 mb-3"><i class="bi bi-check-circle-fill text-primary" aria-hidden="true"></i><span>No ads, analytics or trackers</span></li>
+              <li class="d-flex gap-3 mb-3"><i class="bi bi-check-circle-fill text-primary" aria-hidden="true"></i><span>Odometer and receipt reading happen on your device</span></li>
+              <li class="d-flex gap-3 mb-3"><i class="bi bi-check-circle-fill text-primary" aria-hidden="true"></i><span>Works fully offline</span></li>
+              <li class="d-flex gap-3"><i class="bi bi-check-circle-fill text-primary" aria-hidden="true"></i><span>You decide when to export a backup</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="py-5 bg-body-tertiary">
+      <div class="container py-lg-4">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4 p-md-5 text-center">
+                <img src="assets/img/icon.svg" alt="" width="80" height="80" class="rounded-4 mb-3">
+                <h2 class="fw-bold">Download Maintrack</h2>
+                <p class="text-body-secondary">Free for Android 7.0 and newer.</p>
+                <a class="btn btn-primary btn-lg" href="https://github.com/{{REPO}}/releases/latest"><i class="bi bi-download me-2" aria-hidden="true"></i>Get the latest APK</a>
+                <p class="small text-body-secondary mt-3 mb-0">You&rsquo;ll find the file under <strong>Assets</strong> on the release page.</p>
+              </div>
+            </div>
+
+            <h3 class="h4 mt-5 mb-3">How to install</h3>
+            <ol class="mb-4">
+              <li class="mb-2">Download the APK to your phone and open it.</li>
+              <li class="mb-2">If Android asks, allow installing apps from your browser or file manager.</li>
+              <li class="mb-2">If <strong>Google Play Protect</strong> says it hasn&rsquo;t seen an app from this developer before, tap <strong>Install anyway</strong>. Don&rsquo;t tap OK, which cancels.</li>
+              <li>Open Maintrack and add your first vehicle.</li>
+            </ol>
+            <div class="alert alert-secondary" role="note">
+              <h4 class="h6"><i class="bi bi-patch-check me-2" aria-hidden="true"></i>Verify it&rsquo;s the real app</h4>
+              <p class="mb-2">The signing certificate fingerprint (SHA-256) of genuine Maintrack releases is:</p>
+              <code class="d-block text-break user-select-all">{{FINGERPRINT}}</code>
+              <p class="small mb-0 mt-2">Technical users can compare it with the output of <code>apksigner verify --print-certs</code>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="py-5">
+      <div class="container py-lg-4">
+        <h2 class="display-6 fw-bold text-center mb-5">Questions</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqList">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq0" aria-expanded="true" aria-controls="faq0">Is Maintrack free?</button>
+            </h3>
+            <div id="faq0" class="accordion-collapse collapse show" data-bs-parent="#faqList">
+              <div class="accordion-body">Yes. There are no ads, subscriptions or accounts.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">Does it need an internet connection?</button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqList">
+              <div class="accordion-body">No. Maintrack works fully offline. Recording services, reading your odometer or receipts, and scheduling reminders all happen on your phone.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Where is my data stored, and how do I back it up?</button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqList">
+              <div class="accordion-body">Only on your phone. Open <strong>Settings</strong> in the app and use <strong>Export</strong> to save a JSON backup, or a CSV for spreadsheets. Keep a copy somewhere safe: if you uninstall the app or lose your phone without a backup, the data can&rsquo;t be recovered. You can restore a backup with <strong>Import</strong>.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Why does Android warn me when I install it?</button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqList">
+              <div class="accordion-body">Android&rsquo;s Play Protect warns about apps from developers it hasn&rsquo;t seen before, which is every new app installed outside the Play Store. It doesn&rsquo;t mean a problem was found in Maintrack. See the install steps above, and you can verify the app&rsquo;s signature against the fingerprint shown there.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">How accurate are the reminders?</button>
+            </h3>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqList">
+              <div class="accordion-body">Date-based reminders (for example every 6 months) are exact. Distance-based reminders are estimates from your recorded usage, so they get better when you update your odometer regularly. Treat them as a helpful nudge and follow your vehicle&rsquo;s owner manual for the official schedule.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Is there an iPhone version?</button>
+            </h3>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqList">
+              <div class="accordion-body">Not at the moment. Maintrack is available for Android 7.0 and newer.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">How do I report a bug or suggest something?</button>
+            </h3>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqList">
+              <div class="accordion-body">Open an issue on <a href="https://github.com/{{REPO}}/issues">GitHub</a> or email <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>.</div>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="border-top py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-body-secondary">
+      <div class="d-flex align-items-center gap-2">
+        <img src="assets/img/icon.svg" alt="" width="24" height="24">
+        <span>&copy; 2026 Maintrack. Free and private.</span>
+      </div>
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link" href="privacy.html">Privacy policy</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/{{REPO}}/releases">Releases</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/{{REPO}}/issues">Report a problem</a></li>
+        <li class="nav-item"><a class="nav-link" href="mailto:{{EMAIL}}">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

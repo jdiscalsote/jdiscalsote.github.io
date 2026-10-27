@@ -1,0 +1,7 @@
+/* Brand colours on top of Bootstrap 5.3. Dark orange for text/buttons keeps contrast at 4.5:1+. */
+:root{--bs-primary:#C2410C;--bs-primary-rgb:194,65,12;--bs-link-color:#C2410C;--bs-link-color-rgb:194,65,12;--bs-link-hover-color:#9A3412;--bs-link-hover-color-rgb:154,52,18}
+[data-bs-theme=dark]{--bs-primary:#FF8A3C;--bs-primary-rgb:255,138,60;--bs-link-color:#FF8A3C;--bs-link-color-rgb:255,138,60;--bs-link-hover-color:#FFB27A;--bs-link-hover-color-rgb:255,178,122}
+.btn-primary{--bs-btn-bg:var(--bs-primary);--bs-btn-border-color:var(--bs-primary);--bs-btn-hover-bg:#9A3412;--bs-btn-hover-border-color:#9A3412;--bs-btn-active-bg:#7C2D12;--bs-btn-active-border-color:#7C2D12;--bs-btn-disabled-bg:var(--bs-primary);--bs-btn-disabled-border-color:var(--bs-primary)}
+[data-bs-theme=dark] .btn-primary{--bs-btn-color:#14181F;--bs-btn-hover-color:#14181F;--bs-btn-active-color:#14181F;--bs-btn-hover-bg:#FFB27A;--bs-btn-hover-border-color:#FFB27A;--bs-btn-active-bg:#FFC9A0;--bs-btn-active-border-color:#FFC9A0}
+.hero{background:linear-gradient(135deg,#CF4709,#9A3412)}
+html{scroll-padding-top:4.5rem}
