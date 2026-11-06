@@ -7,6 +7,10 @@ export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
     base: "./",
+    build: {
+      outDir: "./my-pos", // Adjust relative path to target your repo's docs/my-pos directory
+      emptyOutDir: true, // Cleans the folder before each build
+    },
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "."),
