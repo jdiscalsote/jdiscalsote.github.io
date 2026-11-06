@@ -1,0 +1,8 @@
+{
+  "name": "Tindahan POS & Inventory",
+  "description": "Mobile-responsive Inventory and Point-of-Sale (POS) system for Philippine sari-sari stores with Google Sheets & Apps Script sync, real-time stock tracking, and sukli calculator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
