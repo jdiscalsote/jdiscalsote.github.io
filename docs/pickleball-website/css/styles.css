@@ -1,0 +1,466 @@
+/* ===================================================================
+   Pickleball Scorer - Official Website Stylesheet
+   Modern, Responsive, Material & High-Contrast Court Aesthetic
+   =================================================================== */
+
+:root {
+  --court-dark: #070d1e;
+  --court-navy: #0b1528;
+  --court-card: #13213c;
+  --court-card-hover: #192b4d;
+  --court-border: #1e335a;
+  --court-border-glow: rgba(204, 255, 0, 0.35);
+  
+  --neon-lime: #ccff00;
+  --neon-lime-dark: #a6d200;
+  --neon-lime-glow: rgba(204, 255, 0, 0.25);
+  
+  --neon-cyan: #00e5ff;
+  --neon-orange: #ff6d00;
+  --fault-red: #ff3b30;
+  --serve-purple: #d500f9;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Light Theme Variables */
+[data-bs-theme="light"] {
+  --court-dark: #f1f5f9;
+  --court-navy: #ffffff;
+  --court-card: #ffffff;
+  --court-card-hover: #f8fafc;
+  --court-border: #cbd5e1;
+  --court-border-glow: rgba(0, 114, 229, 0.25);
+  --neon-lime: #00875a;
+  --neon-lime-glow: rgba(0, 135, 90, 0.15);
+  --neon-cyan: #0284c7;
+  --neon-orange: #ea580c;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #64748b;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--court-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6, .brand-font {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* -------------------------------------------------------------
+   SPLASH SCREEN (Animated app loading transition)
+   ------------------------------------------------------------- */
+#splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: radial-gradient(circle at center, #0e1d3d 0%, #050a17 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s ease;
+}
+
+#splash-screen.splash-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.splash-ball-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.splash-ball {
+  width: 72px;
+  height: 72px;
+  background: radial-gradient(circle at 30% 30%, #eeff88, #ccff00 60%, #88aa00);
+  border-radius: 50%;
+  box-shadow: 0 0 35px rgba(204, 255, 0, 0.6), inset -4px -4px 8px rgba(0, 0, 0, 0.4);
+  position: relative;
+  animation: splashBounce 1.4s ease-in-out infinite alternate;
+}
+
+/* Pickleball ball holes */
+.splash-ball::before,
+.splash-ball::after {
+  content: "";
+  position: absolute;
+  background: #668800;
+  border-radius: 50%;
+  opacity: 0.65;
+}
+.splash-ball::before {
+  width: 10px;
+  height: 10px;
+  top: 18px;
+  left: 20px;
+  box-shadow: 22px 0 0 #668800, 10px 18px 0 #668800, 26px 20px 0 #668800;
+}
+.splash-ball::after {
+  width: 8px;
+  height: 8px;
+  bottom: 12px;
+  left: 18px;
+  box-shadow: 18px 0 0 #668800, 10px -14px 0 #668800;
+}
+
+.splash-pulse-ring {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 2px solid var(--neon-lime);
+  border-radius: 50%;
+  opacity: 0;
+  animation: splashRipple 1.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.splash-progress-track {
+  width: 220px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.splash-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-lime));
+  border-radius: 99px;
+  animation: splashFill 1.5s ease-in-out forwards;
+}
+
+@keyframes splashBounce {
+  0% { transform: translateY(-16px) scale(0.96, 1.04); }
+  100% { transform: translateY(12px) scale(1.05, 0.94); }
+}
+
+@keyframes splashRipple {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@keyframes splashFill {
+  0% { width: 0%; }
+  60% { width: 75%; }
+  100% { width: 100%; }
+}
+
+/* -------------------------------------------------------------
+   NAVBAR
+   ------------------------------------------------------------- */
+.navbar-custom {
+  background: rgba(7, 13, 30, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--court-border);
+  padding: 14px 0;
+  transition: all 0.3s ease;
+}
+
+[data-bs-theme="light"] .navbar-custom {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-brand-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--neon-lime-glow);
+  color: var(--neon-lime);
+  border: 1px solid var(--neon-lime);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 14px !important;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--neon-lime) !important;
+  background: var(--neon-lime-glow);
+}
+
+/* -------------------------------------------------------------
+   BUTTONS
+   ------------------------------------------------------------- */
+.btn-neon {
+  background: var(--neon-lime);
+  color: #070d1e;
+  font-weight: 800;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 18px var(--neon-lime-glow);
+  transition: all 0.25s ease;
+}
+
+.btn-neon:hover {
+  background: #d8ff33;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(204, 255, 0, 0.45);
+}
+
+.btn-court-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1.5px solid var(--court-border);
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 12px 24px;
+  transition: all 0.2s ease;
+}
+
+.btn-court-outline:hover {
+  background: var(--court-card);
+  border-color: var(--neon-lime);
+  color: var(--neon-lime);
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------------
+   CARDS & SECTIONS
+   ------------------------------------------------------------- */
+.court-card {
+  background: var(--court-card);
+  border: 1px solid var(--court-border);
+  border-radius: 16px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.court-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--court-border-glow);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.badge-court {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--court-card);
+  border: 1px solid var(--court-border);
+  color: var(--neon-lime);
+}
+
+/* -------------------------------------------------------------
+   HERO SECTION
+   ------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  padding: 100px 0 80px;
+  background: radial-gradient(circle at 50% 20%, rgba(204, 255, 0, 0.08) 0%, transparent 60%);
+}
+
+.hero-img-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid var(--court-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.hero-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hero-img-wrapper:hover img {
+  transform: scale(1.02);
+}
+
+/* -------------------------------------------------------------
+   INTERACTIVE SCOREBOARD SIMULATOR WIDGET
+   ------------------------------------------------------------- */
+.simulator-box {
+  background: #081124;
+  border: 2px solid var(--neon-lime);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--neon-lime-glow);
+}
+
+.sim-callout {
+  background: #020817;
+  border: 1.5px solid var(--court-border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.sim-score-digits {
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-family: var(--font-heading);
+}
+
+.sim-team-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.sim-court-diagram {
+  background: #053b26;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding: 12px;
+  position: relative;
+  min-height: 140px;
+}
+
+.sim-kitchen {
+  background: rgba(255, 255, 255, 0.15);
+  border-left: 2px dashed #ffffff;
+  border-right: 2px dashed #ffffff;
+}
+
+/* -------------------------------------------------------------
+   STEP BY STEP GUIDE
+   ------------------------------------------------------------- */
+.step-number-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 900;
+  background: var(--neon-lime);
+  color: #070d1e;
+  box-shadow: 0 4px 15px var(--neon-lime-glow);
+  flex-shrink: 0;
+}
+
+.guide-step-card {
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid var(--court-border);
+}
+
+.guide-step-card.active-step {
+  border-left-color: var(--neon-lime);
+}
+
+/* -------------------------------------------------------------
+   PRICING SECTION
+   ------------------------------------------------------------- */
+.pricing-card {
+  position: relative;
+  background: var(--court-card);
+  border: 1.5px solid var(--court-border);
+  border-radius: 20px;
+  padding: 36px 28px;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card.popular {
+  border-color: var(--neon-lime);
+  box-shadow: 0 10px 35px var(--neon-lime-glow);
+  transform: scale(1.03);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--neon-lime);
+  color: #070d1e;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 4px 16px;
+  border-radius: 99px;
+  text-transform: uppercase;
+}
+
+.price-amount {
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+}
+
+/* -------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------- */
+.footer-custom {
+  background: #040813;
+  border-top: 1px solid var(--court-border);
+  padding: 60px 0 30px;
+}
+
+/* Floating Action Button for Replaying Splash */
+.btn-replay-splash {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--neon-lime);
+  color: #070d1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.btn-replay-splash:hover {
+  transform: scale(1.1) rotate(15deg);
+}

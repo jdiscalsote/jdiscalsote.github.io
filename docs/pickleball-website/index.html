@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pickleball Scorer - Official Match & Tournament Scorekeeper</title>
+  <meta name="description" content="Professional pickleball scorekeeper app for Android. Doubles 3-number callouts, server rotation, court visualizer, rally & side-out scoring, PDF/CSV export.">
+  
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Google Fonts (Inter & Outfit) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- =============================================================
+       SPLASH SCREEN (Animated loading transition matching the app)
+       ============================================================= -->
+  <div id="splash-screen">
+    <div class="splash-ball-wrapper">
+      <div class="splash-pulse-ring"></div>
+      <div class="splash-ball"></div>
+    </div>
+    <div class="text-center px-3">
+      <span class="badge-court mb-2">USA PICKLEBALL COMPLIANT</span>
+      <h2 class="text-white fw-black mb-1 brand-font tracking-wide" style="font-size: 1.8rem; letter-spacing: 1px;">
+        PICKLEBALL <span style="color: var(--neon-lime);">SCORER</span>
+      </h2>
+      <p class="text-secondary small mb-0">Professional Match & Tournament Scorekeeper</p>
+      
+      <div class="splash-progress-track mx-auto">
+        <div class="splash-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Replay Splash Floating Action Button -->
+  <button id="btn-replay-splash" class="btn-replay-splash" title="Replay Splash Screen Animation">
+    <i class="bi bi-arrow-clockwise fs-5"></i>
+  </button>
+
+  <!-- Back to Top Floating Button -->
+  <button id="btn-back-to-top" class="btn-replay-splash" style="bottom: 84px; display: none; background: var(--court-card); color: var(--neon-lime); border: 1px solid var(--court-border);" title="Back to Top">
+    <i class="bi bi-chevron-up fs-5"></i>
+  </button>
+
+  <!-- =============================================================
+       NAVBAR
+       ============================================================= -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <img src="assets/images/logo.png" alt="Pickleball Scorer Logo" width="38" height="38" class="rounded-3 shadow-sm">
+        <span class="fw-bold brand-font fs-5 text-white">Pickleball <span style="color: var(--neon-lime);">Scorer</span></span>
+        <span class="navbar-brand-badge ms-1">v1.0 Release</span>
+      </a>
+
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#guide">Step-by-Step Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="#simulator">Live Court Demo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rules">Rules Cheat Sheet</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing & Buy</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          
+          <!-- Theme Toggle -->
+          <li class="nav-item ms-lg-2 my-2 my-lg-0">
+            <button id="theme-toggle-btn" class="btn btn-outline-secondary btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;" title="Toggle Light/Dark Theme">
+              <i id="theme-toggle-icon" class="bi bi-sun-fill text-warning"></i>
+            </button>
+          </li>
+
+          <!-- Download Action -->
+          <li class="nav-item ms-lg-2">
+            <a href="PickleballScorer-release.apk" class="btn btn-neon btn-sm d-inline-flex align-items-center gap-2 px-3 py-2" download>
+              <i class="bi bi-download"></i>
+              <span>Download APK</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =============================================================
+       HERO SECTION
+       ============================================================= -->
+  <header id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 text-center text-lg-start">
+          <div class="badge-court mb-3">
+            <i class="bi bi-trophy-fill text-warning"></i>
+            <span>Tournament Grade • Singles & Doubles</span>
+          </div>
+          <h1 class="display-4 fw-black text-white mb-3" style="letter-spacing: -1px; line-height: 1.15;">
+            Master Pickleball Scores Without <span style="color: var(--neon-lime);">Ever Losing Track</span>
+          </h1>
+          <p class="lead text-secondary mb-4 fs-6">
+            The all-in-one scorekeeper built for referees, clubs, and casual players. Automatically handles the official <strong>3-number doubles callout (e.g. 4-2-1)</strong>, server rotation, even/odd court positioning, side switches, 60-second timeouts, and instant export to tournament <strong>PDF & CSV scorecards</strong>.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4">
+            <a href="PickleballScorer-release.apk" class="btn btn-neon d-inline-flex align-items-center gap-2" download>
+              <i class="bi bi-android2 fs-5"></i>
+              <span>Download Release APK (17 MB)</span>
+            </a>
+            <a href="#simulator" class="btn btn-court-outline d-inline-flex align-items-center gap-2">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Try Live Court Demo</span>
+            </a>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-4 pt-2 text-secondary small">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-success"></i>
+              <span>100% Offline (No Cloud Req)</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-success"></i>
+              <span>Dark & Light High Contrast</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-success"></i>
+              <span>Instant PDF / CSV</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-img-wrapper">
+            <img src="assets/images/hero.jpg" alt="Pickleball Scorer Mobile App Hero Display" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =============================================================
+       FEATURES SECTION
+       ============================================================= -->
+  <section id="features" class="py-5">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-court mb-2">Engineered For Accuracy</span>
+        <h2 class="display-6 fw-bold text-white mb-2">Designed Around Official USA Pickleball Rules</h2>
+        <p class="text-secondary">Eliminates court confusion with real-time positioning tokens, automated server switches, and oversized outdoor-ready buttons.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Feature 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="court-card p-4 h-100">
+            <div class="d-inline-flex p-3 rounded-4 mb-3" style="background: rgba(204, 255, 0, 0.15); color: var(--neon-lime);">
+              <i class="bi bi-megaphone-fill fs-3"></i>
+            </div>
+            <h4 class="text-white fs-5 fw-bold mb-2">Official 3-Number Callout</h4>
+            <p class="text-secondary small mb-0">
+              Never miscalculate an opening serve again. The app automatically speaks and displays the 3-digit sequence: <strong>Serving Score – Receiving Score – Server (1 or 2)</strong>, including the mandatory <strong>0-0-2</strong> opening serve rule.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="court-card p-4 h-100">
+            <div class="d-inline-flex p-3 rounded-4 mb-3" style="background: rgba(0, 229, 255, 0.15); color: var(--neon-cyan);">
+              <i class="bi bi-grid-3x3-gap-fill fs-3"></i>
+            </div>
+            <h4 class="text-white fs-5 fw-bold mb-2">Interactive Court Visualizer</h4>
+            <p class="text-secondary small mb-0">
+              Live overhead diagram showing both teams on court, Right (Even) vs Left (Odd) service courts, Non-Volley Zone (The Kitchen), and a bright pulsing beacon indicating who is serving.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="court-card p-4 h-100">
+            <div class="d-inline-flex p-3 rounded-4 mb-3" style="background: rgba(255, 109, 0, 0.15); color: var(--neon-orange);">
+              <i class="bi bi-stopwatch-fill fs-3"></i>
+            </div>
+            <h4 class="text-white fs-5 fw-bold mb-2">Side-Out & Rally Scoring</h4>
+            <p class="text-secondary small mb-0">
+              Seamlessly toggle between Traditional Side-Out scoring (only serving team scores points) and modern Rally Scoring (point on every rally) with games to 11, 15, or 21, and win-by-2 verification.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="court-card p-4 h-100">
+            <div class="d-inline-flex p-3 rounded-4 mb-3" style="background: rgba(213, 0, 249, 0.15); color: var(--serve-purple);">
+              <i class="bi bi-palette-fill fs-3"></i>
+            </div>
+            <h4 class="text-white fs-5 fw-bold mb-2">Custom Team Colors</h4>
+            <p class="text-secondary small mb-0">
+              Choose from 9 high-contrast team colors (Cyan, Orange, Lime, Purple, Red, Pink, Emerald, Yellow, Blue). Update colors before the match or live mid-game with 1 tap.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="court-card p-4 h-100">
+            <div class="d-inline-flex p-3 rounded-4 mb-3" style="background: rgba(255, 59, 48, 0.15); color: var(--fault-red);">
+              <i class="bi bi-file-earmark-pdf-fill fs-3"></i>
+            </div>
+            <h4 class="text-white fs-5 fw-bold mb-2">PDF Scorecard & CSV Export</h4>
+            <p class="text-secondary small mb-0">
+              Generate official match certificates and signature-ready PDF scorecards directly to your phone. Export complete point-by-point spreadsheets in CSV format for tournament brackets.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="court-card p-4 h-100">
+            <div class="d-inline-flex p-3 rounded-4 mb-3" style="background: rgba(255, 255, 255, 0.1); color: var(--text-main);">
+              <i class="bi bi-shield-check fs-3"></i>
+            </div>
+            <h4 class="text-white fs-5 fw-bold mb-2">100% Offline & Private</h4>
+            <p class="text-secondary small mb-0">
+              Zero accounts, zero logins, and zero cloud dependency. All player stats, match logs, and tournament records are saved locally on your device via Room SQLite.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       STEP-BY-STEP USER GUIDE
+       ============================================================= -->
+  <section id="guide" class="py-5" style="background: var(--court-navy);">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-court mb-2">Simple & Intuitive</span>
+        <h2 class="display-6 fw-bold text-white mb-2">How to Use Pickleball Scorer (Step-by-Step)</h2>
+        <p class="text-secondary">From opening setup to tournament certification — follow these 5 straightforward steps.</p>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <div class="d-flex flex-column gap-4">
+            
+            <!-- Step 1 -->
+            <div class="court-card p-4 d-flex gap-3 align-items-start">
+              <div class="step-number-badge">1</div>
+              <div>
+                <h5 class="text-white fw-bold mb-1">Configure Match Settings</h5>
+                <p class="text-secondary small mb-2">
+                  Launch the app and tap <strong>New Match</strong>. Select <strong>Doubles</strong> or <strong>Singles</strong>, choose your scoring system (<em>Traditional Side-Out</em> or <em>Rally Scoring</em>), target score (<em>11, 15, or 21</em>), enter player names, and pick vibrant team colors.
+                </p>
+                <span class="badge bg-dark border border-secondary text-secondary small">💡 Tip: Set Win-by-2 to ON for official tournament matches</span>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="court-card p-4 d-flex gap-3 align-items-start">
+              <div class="step-number-badge">2</div>
+              <div>
+                <h5 class="text-white fw-bold mb-1">Observe Opening Serve (0-0-2)</h5>
+                <p class="text-secondary small mb-2">
+                  The match launches on the <strong>Live Score screen</strong>. The header prominently displays the opening callout: <strong style="color: var(--neon-lime);">0 - 0 - 2</strong>. In pickleball, the opening serving team only gets one server before side-out.
+                </p>
+                <span class="badge bg-dark border border-secondary text-secondary small">⚡ Server #2 starts on the Right (Even) court</span>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="court-card p-4 d-flex gap-3 align-items-start">
+              <div class="step-number-badge">3</div>
+              <div>
+                <h5 class="text-white fw-bold mb-1">Record Points & Faults With Oversized Buttons</h5>
+                <p class="text-secondary small mb-2">
+                  When the serving team wins the rally, tap the oversized green <strong class="text-success">+ POINT</strong> button. The app increments the score and automatically switches server sides. If the serving team faults, tap <strong class="text-danger">FAULT / SIDE OUT</strong> to rotate to Server 2 or transition serve to opponents.
+                </p>
+                <span class="badge bg-dark border border-secondary text-secondary small">🔄 Accidental tap? Tap the 1-tap Undo button</span>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="court-card p-4 d-flex gap-3 align-items-start">
+              <div class="step-number-badge">4</div>
+              <div>
+                <h5 class="text-white fw-bold mb-1">Call Timeouts & Track Side Switches</h5>
+                <p class="text-secondary small mb-2">
+                  Tap the <strong>Timeout</strong> button to activate an official 60-second countdown with whistle vibration warnings. When a team reaches 6 or 8 points (or at each game finish), the app alerts players to swap sides of the court.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="court-card p-4 d-flex gap-3 align-items-start">
+              <div class="step-number-badge">5</div>
+              <div>
+                <h5 class="text-white fw-bold mb-1">Finish Match & Export Scorecards</h5>
+                <p class="text-secondary small mb-2">
+                  Once a team reaches the victory score, tap <strong>Conclude & Save Match</strong>. From the Match History log, you can view in-depth set analytics, or export a professional <strong>PDF Scorecard</strong> or <strong>CSV Data file</strong> to share with tournament directors.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="court-card p-3 border-2" style="border-color: var(--neon-lime);">
+            <img src="assets/images/features.jpg" alt="Referee Tablet Scorekeeper on Court" class="img-fluid rounded-3 mb-3">
+            <div class="p-3">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="badge bg-success text-dark fw-bold">Live Match Assistant</span>
+                <span class="text-secondary small"><i class="bi bi-clock me-1"></i> Match Time: 28:14</span>
+              </div>
+              <h5 class="text-white fw-bold mb-1">Real-Time Court Synchronization</h5>
+              <p class="text-secondary small mb-0">
+                Unlike generic score counters, Pickleball Scorer constantly tracks which physical player is standing in the Left vs Right court, preventing illegal service faults during heated matches.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       INTERACTIVE LIVE COURT DEMO (IN-BROWSER WIDGET)
+       ============================================================= -->
+  <section id="simulator" class="py-5">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-court mb-2">Interactive Playground</span>
+        <h2 class="display-6 fw-bold text-white mb-2">Try the Official Scoring Engine Right Now</h2>
+        <p class="text-secondary">Click the buttons below to test how the 3-number callout and server rotations behave in real matches!</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="simulator-box">
+            
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3 pb-3 border-bottom border-secondary border-opacity-25">
+              <div class="d-flex align-items-center gap-2">
+                <span class="badge bg-danger text-white">LIVE SIMULATOR</span>
+                <span id="sim-server-badge" class="badge bg-info text-dark fw-bold">Team 1 Serving (Right / Even Court)</span>
+              </div>
+              <button id="sim-btn-reset" class="btn btn-sm btn-outline-secondary text-white">
+                <i class="bi bi-arrow-counterclockwise me-1"></i> Reset to 0-0-2
+              </button>
+            </div>
+
+            <!-- 3-Number Callout Display -->
+            <div class="sim-callout mb-4">
+              <div class="text-secondary small text-uppercase fw-bold letter-spacing-1 mb-1">Official Doubles Callout</div>
+              <div id="sim-callout-text" class="sim-score-digits text-white">0 - 0 - 2</div>
+              <div class="text-secondary small mt-1">
+                <span class="text-info fw-bold">[Serving Score]</span> – <span class="text-warning fw-bold">[Receiving Score]</span> – <span class="text-success fw-bold">[Server Number]</span>
+              </div>
+            </div>
+
+            <!-- Team Scores Bar -->
+            <div class="row g-2 mb-4 text-center">
+              <div class="col-6">
+                <div class="p-3 rounded-3" style="background: rgba(0, 229, 255, 0.1); border: 1.5px solid var(--neon-cyan);">
+                  <div class="text-uppercase fw-bold small text-info">Team 1 (Cyan)</div>
+                  <div id="sim-team1-pts" class="fs-3 fw-black text-white">0 pts</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded-3" style="background: rgba(255, 109, 0, 0.1); border: 1.5px solid var(--neon-orange);">
+                  <div class="text-uppercase fw-bold small text-warning">Team 2 (Orange)</div>
+                  <div id="sim-team2-pts" class="fs-3 fw-black text-white">0 pts</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Status Alert Box -->
+            <div id="sim-status-log" class="alert alert-dark text-center border-secondary text-light small py-2 mb-4">
+              Game ready. Press "Serving Point" or "Fault / Side-Out".
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="row g-3">
+              <div class="col-md-6">
+                <button id="sim-btn-point" class="btn btn-success w-100 py-3 fs-5 fw-bold d-flex align-items-center justify-content-center gap-2 shadow">
+                  <i class="bi bi-plus-circle-fill"></i>
+                  <span>Serving Point (+1)</span>
+                </button>
+              </div>
+              <div class="col-md-6">
+                <button id="sim-btn-fault" class="btn btn-danger w-100 py-3 fs-5 fw-bold d-flex align-items-center justify-content-center gap-2 shadow">
+                  <i class="bi bi-x-circle-fill"></i>
+                  <span>Fault / Side-Out</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       RULES CHEAT SHEET SECTION
+       ============================================================= -->
+  <section id="rules" class="py-5" style="background: var(--court-navy);">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-court mb-2">Essential Knowledge</span>
+        <h2 class="display-6 fw-bold text-white mb-2">Official Pickleball Rules Cheat Sheet</h2>
+        <p class="text-secondary">Keep these four core rules handy during tournament matches and social play.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="court-card p-4 h-100">
+            <div class="d-flex align-items-center gap-2 text-warning mb-2">
+              <i class="bi bi-1-circle-fill fs-4"></i>
+              <h5 class="text-white fw-bold mb-0">The "0-0-2" Opening Serve Rule</h5>
+            </div>
+            <p class="text-secondary small mb-0">
+              At the very beginning of every doubles match, the opening serving team is only allowed <strong>one server</strong> before a side-out is called. This server is designated as <strong>Server #2</strong>. This prevents the opening team from racking up an unfair lead before opponents have even served.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="court-card p-4 h-100">
+            <div class="d-flex align-items-center gap-2 text-info mb-2">
+              <i class="bi bi-2-circle-fill fs-4"></i>
+              <h5 class="text-white fw-bold mb-0">Even/Odd Service Positions</h5>
+            </div>
+            <p class="text-secondary small mb-0">
+              When a team's current score is an <strong>even number</strong> (0, 2, 4, 6...), the first server must serve from the <strong>Right court</strong>. When the score is an <strong>odd number</strong> (1, 3, 5...), the serve must originate from the <strong>Left court</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="court-card p-4 h-100">
+            <div class="d-flex align-items-center gap-2 text-danger mb-2">
+              <i class="bi bi-3-circle-fill fs-4"></i>
+              <h5 class="text-white fw-bold mb-0">Non-Volley Zone (The Kitchen)</h5>
+            </div>
+            <p class="text-secondary small mb-0">
+              The 7-foot area on both sides of the net is the Non-Volley Zone. Players cannot volley the ball (strike it out of the air) while touching any portion of the kitchen or kitchen boundary lines. Players may only step into the kitchen if the ball has bounced in it first.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="court-card p-4 h-100">
+            <div class="d-flex align-items-center gap-2 text-success mb-2">
+              <i class="bi bi-4-circle-fill fs-4"></i>
+              <h5 class="text-white fw-bold mb-0">The Two-Bounce Rule</h5>
+            </div>
+            <p class="text-secondary small mb-0">
+              After the serve, each team must play their first shot off the bounce. That is, the receiving team must let the serve bounce, and the serving team must let the return of serve bounce before playing it. After two bounces have occurred, volleys are permitted!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       PRICING & HOW TO MAKE PURCHASE SECTION
+       ============================================================= -->
+  <section id="pricing" class="py-5">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-court mb-2">Transparent Licensing</span>
+        <h2 class="display-6 fw-bold text-white mb-2">Simple, One-Time Purchase Pricing</h2>
+        <p class="text-secondary">No recurring subscriptions or hidden cloud fees. Pay once, own forever with lifetime updates.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch justify-content-center mb-5">
+        
+        <!-- Free Starter Tier -->
+        <div class="col-md-6 col-lg-4">
+          <div class="pricing-card">
+            <h4 class="text-white fw-bold mb-1">Community Free</h4>
+            <p class="text-secondary small mb-4">Great for casual backyard play</p>
+            <div class="mb-4">
+              <span class="price-amount text-white">$0</span>
+              <span class="text-secondary">/ forever</span>
+            </div>
+
+            <ul class="list-unstyled d-flex flex-column gap-3 text-secondary small mb-4 flex-grow-1">
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check2 text-success fs-5"></i> <span>Singles & Doubles scoring</span></li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check2 text-success fs-5"></i> <span>Official 3-number callout</span></li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check2 text-success fs-5"></i> <span>Interactive Court visualizer</span></li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check2 text-success fs-5"></i> <span>5 Saved matches history</span></li>
+              <li class="d-flex align-items-center gap-2 text-decoration-line-through text-dim"><i class="bi bi-x text-muted fs-5"></i> <span>PDF & CSV exports</span></li>
+              <li class="d-flex align-items-center gap-2 text-decoration-line-through text-dim"><i class="bi bi-x text-muted fs-5"></i> <span>Custom team color presets</span></li>
+            </ul>
+
+            <a href="PickleballScorer-release.apk" class="btn btn-court-outline w-100" download>
+              Download Free Version
+            </a>
+          </div>
+        </div>
+
+        <!-- Pro Scorekeeper Tier (Popular) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="pricing-card popular">
+            <div class="popular-badge">RECOMMENDED FOR PLAYERS</div>
+            <h4 class="text-white fw-bold mb-1">Pro Scorekeeper</h4>
+            <p class="text-secondary small mb-4">Complete toolset for serious competitors</p>
+            <div class="mb-4">
+              <span class="price-amount" style="color: var(--neon-lime);">$4.99</span>
+              <span class="text-secondary">/ one-time</span>
+            </div>
+
+            <ul class="list-unstyled d-flex flex-column gap-3 text-secondary small mb-4 flex-grow-1">
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span><strong>Everything in Free</strong></span></li>
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span><strong>Unlimited</strong> match history storage</span></li>
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span>Full <strong>PDF Scorecard</strong> certificates</span></li>
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span>Complete <strong>CSV Data Export</strong></span></li>
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span><strong>9 High-Contrast Team Colors</strong></span></li>
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span>Dark & Light mode high contrast</span></li>
+            </ul>
+
+            <button class="btn btn-neon w-100" data-bs-toggle="modal" data-bs-target="#checkoutModal" data-plan-name="Pro Scorekeeper License" data-plan-price="$4.99 USD">
+              Purchase Pro License ($4.99)
+            </button>
+          </div>
+        </div>
+
+        <!-- Tournament / Club Tier -->
+        <div class="col-md-6 col-lg-4">
+          <div class="pricing-card">
+            <h4 class="text-white fw-bold mb-1">Club & Tournament</h4>
+            <p class="text-secondary small mb-4">For referees, tournament directors & clubs</p>
+            <div class="mb-4">
+              <span class="price-amount text-white">$19.99</span>
+              <span class="text-secondary">/ lifetime</span>
+            </div>
+
+            <ul class="list-unstyled d-flex flex-column gap-3 text-secondary small mb-4 flex-grow-1">
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span><strong>Everything in Pro</strong></span></li>
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span>Multi-court multi-device licenses</span></li>
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span>Bulk tournament CSV batch exports</span></li>
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span>Custom tournament name on PDF header</span></li>
+              <li class="d-flex align-items-center gap-2 text-white"><i class="bi bi-check-circle-fill text-success fs-5"></i> <span>Priority developer email support</span></li>
+            </ul>
+
+            <button class="btn btn-court-outline w-100" data-bs-toggle="modal" data-bs-target="#checkoutModal" data-plan-name="Club & Tournament License" data-plan-price="$19.99 USD">
+              Purchase Club License ($19.99)
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- HOW TO PURCHASE INSTRUCTIONS -->
+      <div class="court-card p-4 p-lg-5 max-w-900 mx-auto">
+        <h3 class="text-white fw-bold mb-4 text-center">How to Make a Purchase & Activate Your License</h3>
+        
+        <div class="row g-4">
+          <div class="col-md-4 text-center">
+            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 54px; height: 54px; background: rgba(204, 255, 0, 0.15); color: var(--neon-lime);">
+              <i class="bi bi-1-circle fs-3"></i>
+            </div>
+            <h5 class="text-white fw-bold fs-6 mb-2">1. Download & Install</h5>
+            <p class="text-secondary small mb-0">
+              Download and sideload <strong>PickleballScorer-release.apk</strong> directly on your Android phone or tablet.
+            </p>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 54px; height: 54px; background: rgba(0, 229, 255, 0.15); color: var(--neon-cyan);">
+              <i class="bi bi-2-circle fs-3"></i>
+            </div>
+            <h5 class="text-white fw-bold fs-6 mb-2">2. Secure Checkout</h5>
+            <p class="text-secondary small mb-0">
+              Click <strong>Purchase Pro</strong> above to complete payment via Stripe, Google Pay, or Credit Card.
+            </p>
+          </div>
+
+          <div class="col-md-4 text-center">
+            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 54px; height: 54px; background: rgba(255, 109, 0, 0.15); color: var(--neon-orange);">
+              <i class="bi bi-3-circle fs-3"></i>
+            </div>
+            <h5 class="text-white fw-bold fs-6 mb-2">3. Instant Activation</h5>
+            <p class="text-secondary small mb-0">
+              Receive your instant 16-character digital license key to unlock unlimited exports and features in app settings!
+            </p>
+          </div>
+        </div>
+
+        <div class="border-top border-secondary border-opacity-25 mt-4 pt-3 d-flex flex-wrap align-items-center justify-content-center gap-4 text-secondary small">
+          <span class="d-flex align-items-center gap-1"><i class="bi bi-shield-lock-fill text-success"></i> 256-Bit SSL Encrypted Payment</span>
+          <span class="d-flex align-items-center gap-1"><i class="bi bi-arrow-repeat text-info"></i> 30-Day Money-Back Guarantee</span>
+          <span class="d-flex align-items-center gap-1"><i class="bi bi-lightning-charge-fill text-warning"></i> Instant License Key Delivery</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============================================================
+       CHECKOUT MODAL
+       ============================================================= -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content court-card border-2" style="border-color: var(--court-border);">
+        <div class="modal-header border-secondary border-opacity-25">
+          <h5 class="modal-title text-white fw-bold" id="checkoutModalLabel">Complete License Purchase</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="d-flex align-items-center justify-content-between p-3 rounded-3 mb-3" style="background: rgba(255, 255, 255, 0.05);">
+            <div>
+              <div id="checkout-plan-title" class="text-white fw-bold">Pro Scorekeeper License</div>
+              <div class="text-secondary small">Lifetime Single-User License</div>
+            </div>
+            <div id="checkout-plan-price" class="fs-4 fw-black" style="color: var(--neon-lime);">$4.99 USD</div>
+          </div>
+
+          <form id="checkoutForm" onsubmit="event.preventDefault();">
+            <div class="mb-3">
+              <label for="buyer-name" class="form-label text-secondary small fw-bold">FULL NAME</label>
+              <input type="text" class="form-control bg-dark text-white border-secondary" id="buyer-name" placeholder="John Doe" required>
+            </div>
+            <div class="mb-3">
+              <label for="buyer-email" class="form-label text-secondary small fw-bold">EMAIL ADDRESS (For License Delivery)</label>
+              <input type="email" class="form-control bg-dark text-white border-secondary" id="buyer-email" placeholder="john@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-secondary small fw-bold">PAYMENT METHOD</label>
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-outline-secondary w-50 active text-white"><i class="bi bi-credit-card me-1"></i> Card</button>
+                <button type="button" class="btn btn-outline-secondary w-50 text-white"><i class="bi bi-google me-1"></i> Google Pay</button>
+              </div>
+            </div>
+
+            <button id="btn-confirm-purchase" type="button" class="btn btn-neon w-100 py-3 mt-2 fw-bold">
+              Confirm & Generate Instant License Key
+            </button>
+          </form>
+
+          <!-- Generated License Display Box -->
+          <div id="checkout-license-result" class="d-none mt-4 p-3 rounded-3 text-center" style="background: rgba(204, 255, 0, 0.1); border: 1px dashed var(--neon-lime);">
+            <div class="text-success fw-bold small mb-1"><i class="bi bi-check-circle-fill me-1"></i> Purchase Successful!</div>
+            <div class="text-secondary small mb-2">Here is your digital activation license key:</div>
+            <div id="generated-license-key" class="p-2 bg-dark rounded font-monospace fs-5 fw-bold text-white mb-2 select-all">PKBL-8X9A-QW42-2026</div>
+            <div class="text-secondary small">Copy this key into <strong>Settings &gt; License Activation</strong> in your mobile app.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================================
+       FAQ SECTION
+       ============================================================= -->
+  <section id="faq" class="py-5" style="background: var(--court-navy);">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-court mb-2">Got Questions?</span>
+        <h2 class="display-6 fw-bold text-white mb-2">Frequently Asked Questions</h2>
+        <p class="text-secondary">Everything you need to know about Pickleball Scorer and how it works.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion accordion-flush" id="faqAccordion">
+            
+            <div class="accordion-item court-card mb-3 border-0 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent text-white fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  How does the app prevent legal serving position errors?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary small pt-0">
+                  Pickleball Scorer maintains an active digital state of each player's exact identity and their starting side. Based on whether the serving score is even or odd, the app recalculates who belongs in the Right (Even) court and who belongs in the Left (Odd) court, giving referees and players immediate visual verification.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item court-card mb-3 border-0 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent text-white fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Does the app require internet access on outdoor courts?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary small pt-0">
+                  No! Pickleball Scorer is 100% standalone and offline. All match logs, player profiles, and rulebook references are stored locally on your device via Room SQLite. You can score games in remote parks or metal sports complexes without needing Wi-Fi or cellular service.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item court-card mb-3 border-0 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent text-white fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  How do I export PDF and CSV scorecards?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary small pt-0">
+                  Navigate to the <strong>Match History</strong> tab. Tap the <strong>Share</strong> icon on any completed match. A chooser dialog will prompt you to select <strong>PDF Official Scorecard</strong> or <strong>CSV Spreadsheet</strong>. You can then print, email, or share directly via Android's native share sheet.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item court-card mb-3 border-0 overflow-hidden">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent text-white fw-bold shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Can I change team colors if both teams wear similar shirts?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary small pt-0">
+                  Yes! You can choose from 9 vibrant presets (Cyan, Orange, Lime, Purple, Red, Pink, Emerald, Yellow, Ocean Blue) before the match, or tap the <strong>Palette icon</strong> in the top bar during an ongoing game to change colors on the fly without resetting the score.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       DOWNLOAD CENTER
+       ============================================================= -->
+  <section id="download" class="py-5">
+    <div class="container py-4 text-center">
+      <div class="court-card p-5 max-w-800 mx-auto" style="border: 2px solid var(--neon-lime);">
+        <img src="assets/images/logo.png" alt="Pickleball Scorer Logo" width="68" height="68" class="rounded-4 mb-3 shadow">
+        <h2 class="display-6 fw-black text-white mb-2">Ready to Elevate Your Pickleball Matches?</h2>
+        <p class="text-secondary mb-4">Download the production-ready APK directly to your Android device and start tracking games like a tournament official.</p>
+        
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+          <a href="PickleballScorer-release.apk" class="btn btn-neon btn-lg d-inline-flex align-items-center gap-2" download>
+            <i class="bi bi-download fs-4"></i>
+            <div class="text-start">
+              <div class="small lh-1 text-dark" style="font-size: 0.75rem;">DIRECT DOWNLOAD</div>
+              <div class="fw-bold">PickleballScorer-release.apk (17 MB)</div>
+            </div>
+          </a>
+          <a href="#guide" class="btn btn-court-outline btn-lg d-inline-flex align-items-center gap-2">
+            <i class="bi bi-book fs-4"></i>
+            <div class="text-start">
+              <div class="small lh-1 text-secondary" style="font-size: 0.75rem;">NEED HELP?</div>
+              <div class="fw-bold">Read User Guide</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-secondary small">
+          Compatible with Android 7.0 (API 24) through Android 15 • Universal APK architecture
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       FOOTER
+       ============================================================= -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4 justify-content-between mb-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <img src="assets/images/logo.png" alt="Logo" width="32" height="32" class="rounded-2">
+            <span class="brand-font fw-bold fs-5 text-white">Pickleball <span style="color: var(--neon-lime);">Scorer</span></span>
+          </div>
+          <p class="text-secondary small mb-3">
+            The dedicated tournament and casual scorekeeping companion for Android. Empowering referees and players worldwide with precision court rules.
+          </p>
+          <div class="d-flex gap-3 text-secondary">
+            <a href="#home" class="text-secondary hover-lime"><i class="bi bi-github fs-5"></i></a>
+            <a href="#home" class="text-secondary hover-lime"><i class="bi bi-twitter-x fs-5"></i></a>
+            <a href="#home" class="text-secondary hover-lime"><i class="bi bi-youtube fs-5"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3 small text-uppercase letter-spacing-1">Product</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2 small text-secondary">
+            <li><a href="#features" class="text-secondary text-decoration-none">Features</a></li>
+            <li><a href="#simulator" class="text-secondary text-decoration-none">Live Demo</a></li>
+            <li><a href="#pricing" class="text-secondary text-decoration-none">Pricing</a></li>
+            <li><a href="PickleballScorer-release.apk" class="text-secondary text-decoration-none" download>Download APK</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3 small text-uppercase letter-spacing-1">Rules & Help</h6>
+          <ul class="list-unstyled d-flex flex-column gap-2 small text-secondary">
+            <li><a href="#guide" class="text-secondary text-decoration-none">Step-by-Step Guide</a></li>
+            <li><a href="#rules" class="text-secondary text-decoration-none">USA Pickleball Rules</a></li>
+            <li><a href="#faq" class="text-secondary text-decoration-none">FAQ</a></li>
+            <li><a href="#pricing" class="text-secondary text-decoration-none">License Support</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h6 class="text-white fw-bold mb-3 small text-uppercase letter-spacing-1">Developer & Contact</h6>
+          <p class="text-secondary small mb-2">Created by freelance software engineering team.</p>
+          <p class="text-secondary small mb-0">Inquiries: <strong>support@pickleballscorer.app</strong></p>
+        </div>
+      </div>
+
+      <div class="border-top border-secondary border-opacity-25 pt-4 text-center text-secondary small">
+        &copy; 2026 Pickleball Scorer. All rights reserved. Designed with pure Bootstrap 5.3.3.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
